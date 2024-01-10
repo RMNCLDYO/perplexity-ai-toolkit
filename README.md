@@ -12,6 +12,14 @@
     <a href="https://pypi.org/project/python-dotenv"><img src="https://img.shields.io/badge/dependency-python--dotenv-yellow" alt="dependency - python-dotenv"></a>
 </p>
 
+<p align="center">
+    <img width="700" src="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/logo.png">
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/dynamic/json?label=Perplexity+AI+Wrapper+and+CLI&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FRMNCLDYO%2FPerplexity-AI-Wrapper-and-CLI%2Fmain%2F.github%2Fversion.json" alt="Version">
+</p>
+
 ## Overview
 This open-source project provides a Python wrapper and command-line interface (CLI) for the Perplexity.AI API, allowing users to easily interact with advanced large language models (LLMs). The Perplexity API offers robust chat completion capabilities and online search functionalities with various models. This wrapper simplifies API interaction, making it accessible for both programmatic use and command-line operations.
 
