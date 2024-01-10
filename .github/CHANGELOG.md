@@ -24,7 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Security
 - N/A
 
-## [1.0.0] - 01/07/2024
+## [1.0.0] - 01/10/2024
 
 ### Added
 - Initial release.
