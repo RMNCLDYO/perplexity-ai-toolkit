@@ -141,9 +141,9 @@ class PerplexityAPI:
 
 def cli_main():
     parser = argparse.ArgumentParser(
-                    prog='Perplexity.AI API Wrapper & Command-line Interface (CLI)',
+                    prog='Perplexity AI Wrapper & Command-line Interface (CLI)',
                     description='A simple wrapper and command-line interface for the Perplexity API.',
-                    epilog='For more information, visit https://github.com/rmncldyo/perplexity-ai-api-python-wrapper-and-cli')
+                    epilog='For more information, visit https://github.com/rmncldyo/perplexity-ai-wrapper-and-cli')
     
     parser.add_argument('-a',  '--api-key',           type=str,   help='Your Perplexity API key')
     parser.add_argument('-c',  '--chat',                          help='Start a new chat session',          action='store_true')
