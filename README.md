@@ -55,7 +55,7 @@ This open-source project provides a Python wrapper and command-line interface (C
 ## Configuration
 1. **Environment Variables** (*Optional*): Set your Perplexity API key in a `.env` file:
    ```
-   API_KEY='your_api_key_here'
+   api_key='your_api_key_here'
    ```
 ***NOTE:*** If you choose not to store your API key as an environment variable, you must pass your API key through the wrapper like this: `PerplexityAPI(api_key='your_api_key').search()` or through the CLI like this: `--api-key your_api_key --search`.
 
