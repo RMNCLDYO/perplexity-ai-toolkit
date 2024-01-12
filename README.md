@@ -164,8 +164,8 @@ Here are the options that can be passed as parameters in the Python wrapper:
 
 **Last updated Janurary 10, 2024*
 
-## API Rate Limits and Pricing
-Be aware of the API's rate limits and pricing details, which can be found [here](https://perplexity.ai/pricing).
+## API Rate Limits
+Be mindful of Perplexity's API rate limits, which can be found [here](https://docs.perplexity.ai/docs/rate-limits).
 
 ## Contributing
 Contributions are welcome!
