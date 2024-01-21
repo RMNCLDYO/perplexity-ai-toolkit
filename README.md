@@ -35,7 +35,7 @@ This open-source project provides a Python wrapper and command-line interface (C
 
 ## Dependencies
 - `requests`: For making HTTP requests to the Perplexity API.
-- `python-dotenv`: (*Optional*) For loading environment variables from a `.env` file.
+- `python-dotenv`: (*Optional*) For loading environment variables from an `.env` file.
 
 ## Getting an Account and API Key
 1. **Create an Account**: Visit [Perplexity AI](https://perplexity.ai) and sign up for an account.
