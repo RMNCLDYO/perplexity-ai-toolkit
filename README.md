@@ -21,7 +21,7 @@
 </p>
 
 ## Overview
-This open-source project provides a Python wrapper and command-line interface (CLI) for the Perplexity.AI API, allowing users to easily interact with advanced large language models (LLMs). The Perplexity API offers robust chat completion capabilities and online search functionalities with various models. This wrapper simplifies API interaction, making it accessible for both programmatic use and command-line operations.
+A simple python wrapper and command-line interface (CLI) for Perplexity AI, enabling programatic access to the chat and online search features using the latest large language models.
 
 ## Key Features
 - **Python Wrapper**: Simplifies calling the Perplexity API with a few lines of code.
