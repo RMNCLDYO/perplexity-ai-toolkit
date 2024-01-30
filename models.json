@@ -1,4 +1,7 @@
-{
+{    
+    "codellama-70b-instruct": {
+        "context_length": 16384
+    },
     "codellama-34b-instruct": {
         "context_length": 16384
     },
