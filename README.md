@@ -21,12 +21,12 @@
 </p>
 
 ## Overview
-A simple python wrapper and command-line interface (CLI) for Perplexity AI, enabling programatic access to the chat and online search features using the latest large language models.
+A simple python wrapper and command-line interface (CLI) for Perplexity AI, enabling programatic access to the chat and online search features using a range of Large Language Models.
 
 ## Key Features
 - **Python Wrapper**: Simplifies calling the Perplexity API with a few lines of code.
 - **Command-Line Interface**: Enables users to interact with the API directly from the terminal.
-- **Support for Multiple Models**: Integrates with a range of models provided by Perplexity API including `mixtral-8x7b-instruct`, `llama-2-70b-chat`, `mistral-7b-instruct`, `pplx-70b-chat`, `codellama-34b-instruct`, `pplx-70b-online`, and more as defined in `models.json` and [here](https://docs.perplexity.ai/docs/model-cards).
+- **Support for Multiple Models**: Integrates with a range of models including `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`, as defined in `models.json` and [here](https://docs.perplexity.ai/docs/model-cards).
 - **Flexible Configuration**: Customizable settings for model choice, token limits, temperature, top_k and more.
 
 ## Prerequisites
@@ -100,7 +100,7 @@ A simple python wrapper and command-line interface (CLI) for Perplexity AI, enab
 | `-a`, `--api-key`                 | Your Perplexity API key.    | `--api-key your_api_key`             |
 | `-c`, `--chat`                    | Start a new chat session.   | `--chat`                             |
 | `-s`, `--search`                  | Start a new search session. | `--search`                           |
-| `-m`, `--model`                   | The name of the model that will complete your prompt. Possible values include `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`.                 | `--model pplx-70b-chat`              |
+| `-m`, `--model`                   | The name of the model that will complete your prompt. Possible values include `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`.                 | `--model pplx-70b-chat`              |
 | `-st`, `--stream`                 | Enabling this feature will deliver the response in incremental segments, providing users with a continuous flow of data, akin to the way services like ChatGPT transmit information.         | `--stream`                           |
 | `-sp`, `--system-prompt`          | The initial system prompt. The system prompt xplicitly sets the insturctions for the model.              | `--system-prompt "Your prompt here"` |
 | `-mt`, `--max-tokens`             | The maximum number of completion tokens returned by the API. The total number of tokens requested in max_tokens plus the number of prompt tokens sent in messages must not exceed the context window token limit of model requested. If left unspecified, then the model will generate tokens until either it reaches its stop token or the end of its context window.   | `--max-tokens 100`                   |
@@ -125,7 +125,7 @@ Here are the options that can be passed as parameters in the Python wrapper:
 | **Parameter**         | **Description**                                | **Example Usage**                    |
 |-----------------------|------------------------------------------------|--------------------------------------|
 | `api_key`             | Your Perplexity API key.                        | `api_key='your_api_key'`             |
-| `model`               | The name of the model that will complete your prompt. Possible values include `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`.                                     | `model='pplx-70b-chat'`              |
+| `model`               | The name of the model that will complete your prompt. Possible values include `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`.                                     | `model='pplx-70b-chat'`              |
 | `stream`              | Determines whether or not to incrementally stream the response.                             | `stream=True`                        |
 | `system_prompt`             | The initial system prompt. The system prompt xplicitly sets the insturctions for the model.                        | `system_prompt="Your prompt here"`             |
 | `max_tokens`          | The maximum number of completion tokens returned by the API. The total number of tokens requested in max_tokens plus the number of prompt tokens sent in messages must not exceed the context window token limit of model requested. If left unspecified, then the model will generate tokens until either it reaches its stop token or the end of its context window.                       | `max_tokens=100`                     |
@@ -154,6 +154,7 @@ Here are the options that can be passed as parameters in the Python wrapper:
 | **Model**                | **Context Length** (*max tokens*) |
 |--------------------------|--------------------|
 | `codellama-34b-instruct` | 16384              |
+| `codellama-70b-instruct` | 16384              |
 | `llama-2-70b-chat`       | 4096               |
 | `mistral-7b-instruct`    | 4096               |
 | `mixtral-8x7b-instruct`  | 4096               |
@@ -162,7 +163,7 @@ Here are the options that can be passed as parameters in the Python wrapper:
 | `pplx-7b-online`         | 4096               |
 | `pplx-70b-online`        | 4096               |
 
-**Last updated Janurary 10, 2024*
+**Last updated Janurary 30, 2024*
 
 ## API Rate Limits
 Be mindful of Perplexity's API rate limits, which can be found [here](https://docs.perplexity.ai/docs/rate-limits).
