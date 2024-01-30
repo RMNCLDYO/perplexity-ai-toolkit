@@ -11,11 +11,11 @@ except ImportError:
 
 class PerplexityAPI:
     def __init__(self, api_key=None, cli_mode=False):
-        print("---------------------------------------------------------------------")
-        print("\n                            Perplexity.AI                            ")
-        print("               API Wrapper & Command-line Interface                \n")
-        print("                         [v1.0] by @rmncldyo                         \n")
-        print("---------------------------------------------------------------------\n")
+        print("------------------------------------------------------------------\n")
+        print("                           Perplexity.AI                          \n")
+        print("               API Wrapper & Command-line Interface               \n")
+        print("                       [v1.0.1] by @rmncldyo                      \n")
+        print("------------------------------------------------------------------\n")
         self.api_key = api_key if api_key else os.getenv('API_KEY')
         self._validate_api_key()
         self.base_url = "https://api.perplexity.ai/chat/completions"
