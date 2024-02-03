@@ -30,7 +30,7 @@ A simple python wrapper and command-line interface (CLI) for Perplexity AI, enab
 - **Flexible Configuration**: Customizable settings for model choice, token limits, temperature, top_k and more.
 
 ## Prerequisites
-- Python 3.x
+- `Python 3.x`
 - A [Perplexity AI](https://perplexity.ai) account and API key.
 
 ## Dependencies
@@ -43,14 +43,12 @@ A simple python wrapper and command-line interface (CLI) for Perplexity AI, enab
 3. **Generate an API Key**: The API key is a your access token that can be used until it is manually refreshed or deleted.
 
 ## Installation
-1. **Clone the Repository**: 
-   ```bash
-   git clone https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI.git
-   ```
-2. **Install Dependencies**: 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Clone the repository and install the required dependencies:
+```bash
+git clone https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI.git
+cd Perplexity-AI-Wrapper-and-CLI
+pip install -r requirements.txt
+```
 
 ## Configuration
 1. **Environment Variables** (*Optional*): Set your Perplexity API key in a `.env` file:
