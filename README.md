@@ -57,8 +57,6 @@ pip install -r requirements.txt
    ```
 ***NOTE:*** If you choose not to store your API key as an environment variable, you must pass your API key through the wrapper like this: `PerplexityAPI(api_key='your_api_key').search()` or through the CLI like this: `--api-key your_api_key --search`.
 
-2. **Modify `models.json`** (*Optional*): Adjust the `models.json` file to add or update models as per your requirements.
-
 ## General Usage
 
 ### Wrapper
@@ -85,7 +83,7 @@ pip install -r requirements.txt
   ```bash
   python pplx.py --api-key your_api_key --search
   ```
-- **Initialize a Chat Session**: 
+- **Initialize Chat Session**: 
   ```bash
   python pplx.py --api-key your_api_key --chat
   ```
