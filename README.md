@@ -1,23 +1,24 @@
 <p align="center">
-    <a href="https://python.org" title="Go to Python homepage"><img src="https://img.shields.io/badge/Python-&gt;=3.x-blue?logo=python&amp;logoColor=white" alt="Made with Python"></a>
+    <a href="https://www.perplexity.ai/" title="Go to Perplexity homepage" target="_blank">
+        <img src="https://img.shields.io/badge/PERPLEXITY%20AI-20808d?style=for-the-badge" alt="Google Gemini AI">
+    </a>
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/maintained-yes-2ea44f" alt="maintained - yes">
-    <a href="/CONTRIBUTING.md" title="Go to contributions doc"><img src="https://img.shields.io/badge/contributions-welcome-2ea44f" alt="contributions - welcome"></a>
+    <a href=".github/version.json" title="Go to changelog" target="_blank">
+        <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=Perplexity+AI+Wrapper+and+CLI&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FRMNCLDYO%2FPerplexity-AI-Wrapper-and-CLI%2Fmain%2F.github%2Fversion.json" alt="Version">
+    </a>
 </p>
 
 <p align="center">
-    <a href="https://pypi.org/project/requests"><img src="https://img.shields.io/badge/dependency-requests-critical" alt="dependency - requests"></a>
-    <a href="https://pypi.org/project/python-dotenv"><img src="https://img.shields.io/badge/dependency-python--dotenv-yellow" alt="dependency - python-dotenv"></a>
+    <a href=".github/CHANGELOG.md" title="Go to changelog" target="_blank"><img src="https://img.shields.io/badge/maintained-yes-2ea44f?style=for-the-badge" alt="maintained - yes"></a>
+    <a href=".github/CONTRIBUTING.md" title="Go to contributions doc" target="_blank"><img src="https://img.shields.io/badge/contributions-welcome-2ea44f?style=for-the-badge" alt="contributions - welcome"></a>
 </p>
 
 <p align="center">
-    <img width="700" src="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/logo.png">
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/dynamic/json?label=Perplexity+AI+Wrapper+and+CLI&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FRMNCLDYO%2FPerplexity-AI-Wrapper-and-CLI%2Fmain%2F.github%2Fversion.json" alt="Version">
+    <a href="/">
+        <img width="700" src="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/logo.png">
+    </a>
 </p>
 
 ## Overview
@@ -152,14 +153,14 @@ Here are the options that can be passed as parameters in the Python wrapper:
 | `codellama-34b-instruct` | 16384              |
 | `codellama-70b-instruct` | 16384              |
 | `llama-2-70b-chat`       | 4096               |
-| `mistral-7b-instruct`    | 4096               |
-| `mixtral-8x7b-instruct`  | 4096               |
+| `mistral-7b-instruct`    | 8192               |
+| `mixtral-8x7b-instruct`  | 8192               |
 | `pplx-7b-chat`           | 8192               |
-| `pplx-70b-chat`          | 4096               |
-| `pplx-7b-online`         | 4096               |
-| `pplx-70b-online`        | 4096               |
+| `pplx-70b-chat`          | 8192               |
+| `pplx-7b-online`         | 8192               |
+| `pplx-70b-online`        | 8192               |
 
-**Last updated Janurary 30, 2024*
+**Last updated February 19, 2024*
 
 ## API Rate Limits
 Be mindful of Perplexity's API rate limits, which can be found [here](https://docs.perplexity.ai/docs/rate-limits).
