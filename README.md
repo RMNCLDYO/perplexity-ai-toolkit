@@ -35,14 +35,23 @@ A simple python wrapper and command-line interface (CLI) for Perplexity AI, enab
 - A [Perplexity AI](https://perplexity.ai) account and API key.
 
 ## Dependencies
+The following Python packages are required:
 - `requests`: For making HTTP requests to the Perplexity API.
-- `python-dotenv`: (*Optional*) For loading environment variables from an `.env` file.
+
+The following Python packages are optional:
+- `python-dotenv`: For managing API keys and other environment variables.
 
 ## Installation
-Clone the repository and install the required dependencies:
+Follow these steps to set up the Perplexity AI Wrapper and CLI on your system:
+
+Clone the repository:
 ```bash
 git clone https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI.git
 cd Perplexity-AI-Wrapper-and-CLI
+```
+
+Install required Python packages:
+```bash
 pip install -r requirements.txt
 ```
 
