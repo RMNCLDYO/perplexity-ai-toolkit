@@ -22,17 +22,22 @@
 </p>
 
 ## Overview
-A simple python wrapper and command-line interface (CLI) for Perplexity AI, enabling programatic access to the chat and online search features using a range of Large Language Models.
 
-## Key Features
-- **Python Wrapper**: Simplifies calling the Perplexity API with a few lines of code.
-- **Command-Line Interface**: Enables users to interact with the API directly from the terminal.
-- **Support for Multiple Models**: Integrates with a range of models including `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`, as defined in `models.json` and [here](https://docs.perplexity.ai/docs/model-cards).
-- **Flexible Configuration**: Customizable settings for model choice, token limits, temperature, top_k and more.
+A Python Wrapper and Command-Line Interface (CLI) for Perplexity AI, designed to facilitate seamless interaction with the full suite of language models offered by Perplexity Labs. 
+
+The tool was crafted to support both individuals seeking direct access to AI-powered chat and search capabilities through the command line and developers looking to integrate AI functionalities into their applications. Whether you're executing web searches or engaging in conversations with AI, this tool streamlines the process, making advanced AI accessible to everyone.
+
+## Features
+
+- **Command-Line Interface (CLI)**: Search online (in real-time) or engage in conversational chats (similar to ChatGPT) directly from the terminal.
+- **Python Wrapper**: Enables seamless interaction with the full suite of AI models offered by Perplexity Labs using just two lines of code.
+- **Diverse Model Selection**: Choose from an extensive range of models optimized for specific tasks like conversation and web search, ensuring the right fit for every project.
+- **Customizable AI Experience**: Tailor AI behavior to your exact needs with adjustable settings for model choice, response style, output length, and more, granting unparalleled access and control a variety of large language models.
 
 ## Prerequisites
-- `Python 3.x`
-- A [Perplexity AI](https://perplexity.ai) account and API key.
+
+- Python 3.x
+- A Perplexity AI account and API key.
 
 ## Dependencies
 The following Python packages are required:
@@ -42,137 +47,197 @@ The following Python packages are optional:
 - `python-dotenv`: For managing API keys and other environment variables.
 
 ## Installation
-Follow these steps to set up the Perplexity AI Wrapper and CLI on your system:
 
-Clone the repository:
-```bash
-git clone https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI.git
-cd Perplexity-AI-Wrapper-and-CLI
-```
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI.git
+    cd Perplexity-AI-Wrapper-and-CLI
+    ```
 
-Install required Python packages:
-```bash
-pip install -r requirements.txt
-```
+2. Install the dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-## Getting an Account and API Key
-1. **Create an Account**: Visit [Perplexity AI](https://perplexity.ai) and sign up for an account.
-2. **Open the API Page**: Once logged in, navigate to your account settings and click on `</> API`. You can also access the page [here](https://www.perplexity.ai/pplx-api). 
-3. **Generate an API Key**: Click `+ Generate` to create your API Key.
+## Getting Started
 
-## Configuration
-1. **Environment Variables** (*Optional*): Set your Perplexity API key in a `.env` file:
+### Obtaining an API Key
+
+> [!IMPORTANT]  
+> In order to generate an API key for Perplexity, you must first add your payment information to your account in order for them to charge you for API usage. API keys can only be generated when your balance is nonzero.
+
+1. Sign up for an account at [Perplexity AI](https://perplexity.ai).
+2. Navigate to `</> API` in your account settings or directly access [API settings](https://www.perplexity.ai/pplx-api).
+3. Click `+ Generate` to create your API Key.
+
+### Configuration (*Optional*)
+
+> [!WARNING]  
+> If you choose not to add your API key to an `.env` file, then you must pass your API key to the wrapper or CLI when running the script.
+
+1. Once you have your API key, you can create a new file named `.env` in the root directory (main folder) of this project, or rename the `example.env` file in the root directory of this project to `.env`.
+2. You can then add your API key to the `.env` file as follows:
    ```
-   api_key='your_api_key_here'
+   API_KEY=your_api_key_here
    ```
-***NOTE:*** If you choose not to store your API key as an environment variable, you must pass your API key through the wrapper like this: `PerplexityAPI(api_key='your_api_key').search()` or through the CLI like this: `--api-key your_api_key --search`.
+3. The program will automatically load and use your API key every time you use the tool.
 
 ## General Usage
 
-### Wrapper
-- **Initialize Online Search Session**: 
-    ```python
-    from pplx import PerplexityAPI
-    
-    PerplexityAPI().search()
-    ```
+### CLI Tool
 
-- **Initialize Chat Session**:
-    ```python
-    from pplx import PerplexityAPI
+#### Online Search Session
+```bash
+python pplx_cli.py search --query "What is today's date?"
+```
 
-    PerplexityAPI().chat()
-    ```
+#### Chat Session
+```bash
+python pplx_cli.py chat
+```
 
-### Command-line interface (CLI)
-- **Help Menu**: Refer to the help for more options:
-  ```bash
-  python pplx.py --help
-  ```
-- **Initialize Online Search Session**: 
-  ```bash
-  python pplx.py --api-key your_api_key --search
-  ```
-- **Initialize Chat Session**: 
-  ```bash
-  python pplx.py --api-key your_api_key --chat
-  ```
+#### Help
+```bash
+python pplx_cli.py --help
+```
+
+### Python Wrapper
+
+#### Online Search Session
+```python
+from pplx_search import SearchAPI
+
+SearchAPI().search(query="What is today's date?")
+```
+
+#### Chat Session
+
+```python
+from pplx_chat import ChatAPI
+
+ChatAPI().chat()
+```
+
+## Advanced Configuration
+
+This section provides a comprehensive overview of each configuration option available through the CLI and Python wrapper interfaces, including their minimum and maximum values, available options, and detailed descriptions to guide you in customizing your interactions with the Perplexity AI models effectively.
+
+### CLI Options
+| Option(s)                    | Description                                     | Example Usage                         |
+|------------------------------|-------------------------------------------------|---------------------------------------|
+| `chat`                       | Start a new chat session.                       | `chat`                                |
+| `search`                     | Start a new search session with a query.        | `search --query "Your search query"`  |
+| `-a`, `--api_key`            | Your Perplexity API key.                        | `--api_key your_api_key`              |
+| `-q`, `--query`              | Your query for the online search model.         | `--search --query "Your query"`       |
+| `-m`, `--model`              | Select the model for your session.              | `--model pplx-70b-chat`               |
+| `-st`, `--stream`            | Enable streaming responses.                     | `--stream`                            |
+| `-sp`, `--system_prompt`     | Set an initial system prompt.                   | `--system_prompt "The system prompt"` |
+| `-mt`, `--max_tokens`        | Set the maximum number of response tokens.      | `--max_tokens 100`                    |
+| `-t`, `--temperature`        | Adjust the randomness of the response.          | `--temperature 0.7`                   |
+| `-tp`, `--top_p`             | Set nucleus sampling threshold.                 | `--top_p 0.9`                         |
+| `-tk`, `--top_k`             | Number of top tokens to consider for filtering. | `--top_k 40`                          |
+| `-pp`, `--presence_penalty`  | Penalize new tokens based on their presence.    | `--presence_penalty 0.5`              |
+| `-fp`, `--frequency_penalty` | Penalize new tokens based on their frequency.   | `--frequency_penalty 0.5`             |
+
+### Wrapper Options
+| Option(s)           | Description                                     | Example Usage                       |
+|---------------------|-------------------------------------------------|-------------------------------------|
+| `api_key`           | Your Perplexity API key.                        | `api_key="your_api_key"`            |
+| `query`             | Your query for the online search model.         | `query="Your search query"`         |
+| `model`             | Select the model for your session.              | `model="plx-70b-chat"`              |
+| `stream`            | Enable streaming responses.                     | `stream=True`                       |
+| `system_prompt`     | Set an initial system prompt.                   | `system_prompt="The system prompt"` |
+| `max_tokens`        | Set the maximum number of response tokens.      | `max_tokens=100`                    |
+| `temperature`       | Adjust the randomness of the response.          | `temperature=0.7`                   |
+| `top_p`             | Set nucleus sampling threshold.                 | `top_p=0.9`                         |
+| `top_k`             | Number of top tokens to consider for filtering. | `top_k=40`                          |
+| `presence_penalty`  | Penalize new tokens based on their presence.    | `presence_penalty=0.5`              |
+| `frequency_penalty` | Penalize new tokens based on their frequency.   | `frequency_penalty=0.5`             |
+
+### Usage Details
+| Option(s)           | Details                                                                                                      |
+|---------------------|--------------------------------------------------------------------------------------------------------------|
+| `chat`              | Initiates a chat session with the specified model. *(CLI ONLY)*                                              |
+| `search`            | Begins a web search session using the provided query string. *(CLI ONLY)*                                    |
+| `api_key`           | Required for authenticating API requests. Your unique API key can be obtained from your Perplexity account.  |
+| `query`             | Specifies the search query for web search sessions. Only applicable with the --search flag.                  |
+| `model`             | The name of the model that will complete your prompt. Possible values include `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`.                   |
+| `stream`            | Enabling this feature will deliver the response in incremental segments, providing users with a continuous flow of data, akin to the way services like ChatGPT transmit information.                         |
+| `system_prompt`     | The initial system prompt. The system prompt explicitly sets the instructions for the model.                                                   |
+| `max_tokens`        | The maximum number of completion tokens returned by the API. The total number of tokens requested in max_tokens plus the number of prompt tokens sent in messages must not exceed the context window token limit of model requested. If left unspecified, then the model will generate tokens until either it reaches its stop token or the end of its context window.         |
+| `temperature`       | The amount of randomness in the response, valued between 0 inclusive and 2 exclusive. Higher values are more random, and lower values are more deterministic. You should either set temperature or top_p, but not both.         |
+| `top_p`             | The nucleus sampling threshold, valued between 0 and 1 inclusive. For each subsequent token, the model considers the results of the tokens with top_p probability mass. You should either alter temperature or top_p, but not both. |
+| `top_k`             | The number of tokens to keep for highest top-k filtering, specified as an integer between 0 and 2048 inclusive. If set to 0, top-k filtering is disabled.                     |
+| `presence_penalty`  | A value between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics. Incompatible with `frequency_penalty`.                                        |
+| `frequency_penalty` | A multiplicative penalty greater than 0. Values greater than 1.0 penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim. A value of 1.0 means no penalty. Incompatible with `presence_penalty`.                              |                                                               |
 
 ## Advanced Usage
 
-### CLI Usage Options
-| **Option(s)**                     | **Description**            | **Example Usage**                    |
-|-----------------------------------|----------------------------|--------------------------------------|
-| `-a`, `--api-key`                 | Your Perplexity API key.    | `--api-key your_api_key`             |
-| `-c`, `--chat`                    | Start a new chat session.   | `--chat`                             |
-| `-s`, `--search`                  | Start a new search session. | `--search`                           |
-| `-m`, `--model`                   | The name of the model that will complete your prompt. Possible values include `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`.                 | `--model pplx-70b-chat`              |
-| `-st`, `--stream`                 | Enabling this feature will deliver the response in incremental segments, providing users with a continuous flow of data, akin to the way services like ChatGPT transmit information.         | `--stream`                           |
-| `-sp`, `--system-prompt`          | The initial system prompt. The system prompt xplicitly sets the insturctions for the model.              | `--system-prompt "Your prompt here"` |
-| `-mt`, `--max-tokens`             | The maximum number of completion tokens returned by the API. The total number of tokens requested in max_tokens plus the number of prompt tokens sent in messages must not exceed the context window token limit of model requested. If left unspecified, then the model will generate tokens until either it reaches its stop token or the end of its context window.   | `--max-tokens 100`                   |
-| `-t`, `--temperature`             | The amount of randomness in the response, valued between 0 inclusive and 2 exclusive. Higher values are more random, and lower values are more deterministic. You should either set temperature or top_p, but not both. | `--temperature 0.7`                  |
-| `-tp`, `--top-p`                  | The nucleus sampling threshold, valued between 0 and 1 inclusive. For each subsequent token, the model considers the results of the tokens with top_p probability mass. You should either alter temperature or top_p, but not both. | `--top-p 0.9`                        |
-| `-tk`, `--top-k`                  | The number of tokens to keep for highest top-k filtering, specified as an integer between 0 and 2048 inclusive. If set to 0, top-k filtering is disabled.        | `--top-k 40`                         |
-| `-pp`, `--presence-penalty`       | A value between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics. Incompatible with `frequency_penalty`.     | `--presence-penalty 0.5`             |
-| `-fp`, `--frequency-penalty`      | A multiplicative penalty greater than 0. Values greater than 1.0 penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim. A value of 1.0 means no penalty. Incompatible with `presence_penalty`.    | `--frequency-penalty 0.5`            |
+### CLI Tool
 
-- **Initialize Online Search Session**: 
-  ```bash
-  python pplx.py -a your_api_key -s -m pplx-7b-online -mt 2000
-  ```
-- **Initialize a Chat Session**: 
-  ```bash
-  python pplx.py -a your_api_key -chat -m mixtral-8x7b-instruct -tk 1096 -fp 0.5
-  ```
+#### Online Search Session with Advanced Settings
+```bash
+python pplx_cli.py search --api_key "YOUR_API_KEY_HERE" --query "What is today's date?" --stream
+```
 
-### Wrapper Usage Options
-Here are the options that can be passed as parameters in the Python wrapper:
+#### Chat Session with Advanced Settings
+```bash
+python pplx_cli.py chat --api_key "YOUR_API_KEY_HERE" --model "llama-2-70b-chat" --system_prompt "You are a comedian. All of your responses should be funny." --stream
+```
 
-| **Parameter**         | **Description**                                | **Example Usage**                    |
-|-----------------------|------------------------------------------------|--------------------------------------|
-| `api_key`             | Your Perplexity API key.                        | `api_key='your_api_key'`             |
-| `model`               | The name of the model that will complete your prompt. Possible values include `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`.                                     | `model='pplx-70b-chat'`              |
-| `stream`              | Determines whether or not to incrementally stream the response.                             | `stream=True`                        |
-| `system_prompt`             | The initial system prompt. The system prompt xplicitly sets the insturctions for the model.                        | `system_prompt="Your prompt here"`             |
-| `max_tokens`          | The maximum number of completion tokens returned by the API. The total number of tokens requested in max_tokens plus the number of prompt tokens sent in messages must not exceed the context window token limit of model requested. If left unspecified, then the model will generate tokens until either it reaches its stop token or the end of its context window.                       | `max_tokens=100`                     |
-| `temperature`         | The amount of randomness in the response, valued between 0 inclusive and 2 exclusive. Higher values are more random, and lower values are more deterministic. You should either set temperature or top_p, but not both.                     | `temperature=0.7`                    |
-| `top_p`               | The nucleus sampling threshold, valued between 0 and 1 inclusive. For each subsequent token, the model considers the results of the tokens with top_p probability mass. You should either alter temperature or top_p, but not both.                     | `top_p=0.9`                          |
-| `top_k`               | The number of tokens to keep for highest top-k filtering, specified as an integer between 0 and 2048 inclusive. If set to 0, top-k filtering is disabled.                            | `top_k=40`                           |
-| `presence_penalty`    | A value between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics. Incompatible with `frequency_penalty`.                         | `presence_penalty=0.5`               |
-| `frequency_penalty`   | A multiplicative penalty greater than 0. Values greater than 1.0 penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim. A value of 1.0 means no penalty. Incompatible with `presence_penalty`.                        | `frequency_penalty=0.5`              |                                                                                |
+#### Help
+```bash
+python pplx_cli.py --help
+```
 
-- **Initialize Online Search Session**: 
-    ```python
-    from pplx import PerplexityAPI
-    
-    PerplexityAPI().search(model="pplx-7b-online", max_tokens=2000)
-    ```
+### Python Wrapper
 
-- **Initialize Chat Session**:
-    ```python
-    from pplx import PerplexityAPI
+#### Online Search Session with Advanced Settings
+```python
+from pplx_search import SearchAPI
 
-    PerplexityAPI().chat(model="mixtral-8x7b-instruct", top_k=1096, frequency_penalty=0.5)
-    ```
+SearchAPI().search(api_key="YOUR_API_KEY_HERE", query="What is today's date?", stream=True)
+```
 
-### Available Models
+#### Chat Session with Advanced Settings
 
-| **Model**                | **Context Length** (*max tokens*) |
-|--------------------------|--------------------|
-| `codellama-34b-instruct` | 16384              |
-| `codellama-70b-instruct` | 16384              |
-| `llama-2-70b-chat`       | 4096               |
-| `mistral-7b-instruct`    | 8192               |
-| `mixtral-8x7b-instruct`  | 8192               |
-| `pplx-7b-chat`           | 8192               |
-| `pplx-70b-chat`          | 8192               |
-| `pplx-7b-online`         | 8192               |
-| `pplx-70b-online`        | 8192               |
+```python
+from pplx_chat import ChatAPI
+
+ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="llama-2-70b-chat", system_prompt="You are a comedian. All of your responses should be funny.", stream=True)
+```
+
+## Available Models
+
+| Model                    | Context Length (*max tokens*)   |
+|--------------------------|---------------------------------|
+| `codellama-34b-instruct` | 16384                           |
+| `codellama-70b-instruct` | 16384                           |
+| `llama-2-70b-chat`       | 4096                            |
+| `mistral-7b-instruct`    | 8192                            |
+| `mixtral-8x7b-instruct`  | 8192                            |
+| `pplx-7b-chat`           | 8192                            |
+| `pplx-70b-chat`          | 8192                            |
+| `pplx-7b-online`         | 8192                            |
+| `pplx-70b-online`        | 8192                            |
 
 **Last updated February 19, 2024*
 
 ## API Rate Limits
-Be mindful of Perplexity's API rate limits, which can be found [here](https://docs.perplexity.ai/docs/rate-limits).
+
+| Model                  | Request rate limit                         | Token rate limit                                         |
+|------------------------|--------------------------------------------|----------------------------------------------------------|
+| mistral-7b-instruct    | - 10/5seconds<br>- 50/minute<br>- 500/hour | - 8000/10seconds<br>- 80000/minute<br>- 256000/10minutes |
+| mixtral-8x7b-instruct  | - 4/5seconds<br>- 12/minute<br>- 120/hour  | - 8000/minute<br>- 32000/10minutes                       |
+| codellama-34b-instruct | - 10/5seconds<br>- 30/minute<br>- 300/hour | - 20000/minute<br>- 80000/10minutes                      |
+| codellama-70b-instruct | - 10/5seconds<br>- 30/minute<br>- 300/hour | - 20000/minute<br>- 80000/10minutes                      |
+| llama-2-70b-chat       | - 4/5seconds<br>- 12/minute<br>- 120/hour  | - 8000/minute<br>- 32000/10minutes                       |
+| pplx-7b-chat           | - 4/5seconds<br>- 12/minute<br>- 120/hour  | - 8000/minute<br>- 32000/10minutes                       |
+| pplx-70b-chat          | - 4/5seconds<br>- 12/minute<br>- 120/hour  | - 8000/minute<br>- 32000/10minutes                       |
+| pplx-7b-online         | - 10/minute                                | N/A                                                      |
+| pplx-70b-online        | - 10/minute                                | N/A                                                      |
+
+**Last updated February 19, 2024*
 
 ## Contributing
 Contributions are welcome!
