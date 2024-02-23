@@ -227,7 +227,7 @@ ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="llama-2-70b-chat", system_pro
 | `pplx-7b-online`         | 8192                            |
 | `pplx-70b-online`        | 8192                            |
 
-**Last updated February 19, 2024*
+**Last updated February 22, 2024*
 
 ## API Rate Limits
 
@@ -243,7 +243,7 @@ ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="llama-2-70b-chat", system_pro
 | pplx-7b-online         | - 10/minute                                | N/A                                                      |
 | pplx-70b-online        | - 10/minute                                | N/A                                                      |
 
-**Last updated February 19, 2024*
+**Last updated February 22, 2024*
 
 ## Contributing
 Contributions are welcome!
