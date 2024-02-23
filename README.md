@@ -64,7 +64,7 @@ The following Python packages are optional:
 ### Obtaining an API Key
 
 > [!IMPORTANT]  
-> In order to generate an API key for Perplexity, you must first add your payment information to your account. API keys can only be generated when your balance is nonzero.
+> In order to generate an API key for Perplexity you must first add your payment information to your Perplexity account. API keys can only be generated when your balance is nonzero.
 
 1. Sign up for an account at [Perplexity AI](https://perplexity.ai).
 2. Navigate to `</> API` in your account settings or directly access [API settings](https://www.perplexity.ai/pplx-api).
