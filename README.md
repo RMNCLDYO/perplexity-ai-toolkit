@@ -31,7 +31,7 @@ The tool was crafted to support both individuals seeking direct access to AI-pow
 
 - **Command-Line Interface (CLI)**: Search online (in real-time) or engage in conversational chats (similar to ChatGPT) directly from the terminal.
 - **Python Wrapper**: Enables seamless interaction with the full suite of AI models offered by Perplexity Labs using just two lines of code.
-- **Diverse Model Selection**: Choose from an extensive range of models optimized for specific tasks like conversation and web search, ensuring the right fit for every project.
+- **Diverse Model Selection**: Choose from an extensive range of models including `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`, optimized for specific tasks like conversation and web search, ensuring the right fit for every project.
 - **Customizable AI Experience**: Tailor AI behavior to your exact needs with adjustable settings for model choice, response style, output length, and more, granting unparalleled access and control a variety of large language models.
 
 ## Prerequisites
@@ -67,8 +67,10 @@ The following Python packages are optional:
 > In order to generate an API key for Perplexity you must first add your payment information to your Perplexity account. API keys can only be generated when your balance is nonzero.
 
 1. Sign up for an account at [Perplexity AI](https://perplexity.ai).
-2. Navigate to `</> API` in your account settings or directly access [API settings](https://www.perplexity.ai/pplx-api).
-3. Click `+ Generate` to create your API Key.
+2. Add your payment information to your Perplexity account.
+3. Navigate to `</> API` in your account settings or access its directly [here](https://www.perplexity.ai/pplx-api).
+4. Click `+ Generate` to create your API Key.
+5. Copy your API key and store it somewhere safe.
 
 ### Configuration (*Optional*)
 
@@ -80,7 +82,7 @@ The following Python packages are optional:
    ```
    API_KEY=your_api_key_here
    ```
-3. The program will automatically load and use your API key every time you use the tool.
+3. The program will automatically load and use your API key whenever you use this tool.
 
 ## General Usage
 
@@ -110,6 +112,8 @@ from pplx_search import SearchAPI
 SearchAPI().search(query="What is today's date?")
 ```
 
+> An executable version of this example can be found [here](./examples/example_search.py)
+
 #### Chat Session
 
 ```python
@@ -118,41 +122,43 @@ from pplx_chat import ChatAPI
 ChatAPI().chat()
 ```
 
+> An executable version of this example can be found [here](./examples/example_chat.py)
+
 ## Advanced Configuration
 
-This section provides a comprehensive overview of each configuration option available through the CLI and Python wrapper interfaces, including their minimum and maximum values, available options, and detailed descriptions to guide you in customizing your interactions with the Perplexity AI models effectively.
+This section provides a comprehensive overview of each configuration option available through the command-line and wrapper interfaces, including their cli flags, example cli and wrapper usage, parameter limits, and detailed descriptions of each option to guide you in customizing your interactions with the full suite of AI models offered by Perplexity Labs.
 
 ### CLI Options
-| Option(s)                    | Description                                     | Example Usage                         |
-|------------------------------|-------------------------------------------------|---------------------------------------|
-| `chat`                       | Start a new chat session.                       | `chat`                                |
-| `search`                     | Start a new search session with a query.        | `search --query "Your search query"`  |
-| `-a`, `--api_key`            | Your Perplexity API key.                        | `--api_key your_api_key`              |
-| `-q`, `--query`              | Your query for the online search model.         | `--search --query "Your query"`       |
-| `-m`, `--model`              | Select the model for your session.              | `--model pplx-70b-chat`               |
-| `-st`, `--stream`            | Enable streaming responses.                     | `--stream`                            |
-| `-sp`, `--system_prompt`     | Set an initial system prompt.                   | `--system_prompt "The system prompt"` |
-| `-mt`, `--max_tokens`        | Set the maximum number of response tokens.      | `--max_tokens 100`                    |
-| `-t`, `--temperature`        | Adjust the randomness of the response.          | `--temperature 0.7`                   |
-| `-tp`, `--top_p`             | Set nucleus sampling threshold.                 | `--top_p 0.9`                         |
-| `-tk`, `--top_k`             | Number of top tokens to consider for filtering. | `--top_k 40`                          |
-| `-pp`, `--presence_penalty`  | Penalize new tokens based on their presence.    | `--presence_penalty 0.5`              |
-| `-fp`, `--frequency_penalty` | Penalize new tokens based on their frequency.   | `--frequency_penalty 0.5`             |
+| Option(s)                    | Description                                     | Example Usage                                  |
+|------------------------------|-------------------------------------------------|------------------------------------------------|
+| `chat`                       | Start a new chat session.                       | `chat`                                         |
+| `search`                     | Start a new search session with a query.        | `search --query "Your search query"`           |
+| `-a`, `--api_key`            | Your Perplexity API key.                        | `--api_key your_api_key`                       |
+| `-q`, `--query`              | Your online search query.                       | `--search --query "Your search query"`         |
+| `-m`, `--model`              | Select the model for your session.              | `--model "pplx-70b-chat"`                        |
+| `-st`, `--stream`            | Enable streaming responses.                     | `--stream`                                     |
+| `-sp`, `--system_prompt`     | Set an initial system prompt.                   | `--system_prompt "The initial system prompt"`  |
+| `-mt`, `--max_tokens`        | Set the maximum number of response tokens.      | `--max_tokens 100`                             |
+| `-t`, `--temperature`        | Adjust the randomness of the response.          | `--temperature 0.7`                            |
+| `-tp`, `--top_p`             | Set nucleus sampling threshold.                 | `--top_p 0.9`                                  |
+| `-tk`, `--top_k`             | Number of top tokens to consider for filtering. | `--top_k 40`                                   |
+| `-pp`, `--presence_penalty`  | Penalize new tokens based on their presence.    | `--presence_penalty 0.5`                       |
+| `-fp`, `--frequency_penalty` | Penalize new tokens based on their frequency.   | `--frequency_penalty 0.5`                      |
 
 ### Wrapper Options
-| Option(s)           | Description                                     | Example Usage                       |
-|---------------------|-------------------------------------------------|-------------------------------------|
-| `api_key`           | Your Perplexity API key.                        | `api_key="your_api_key"`            |
-| `query`             | Your query for the online search model.         | `query="Your search query"`         |
-| `model`             | Select the model for your session.              | `model="plx-70b-chat"`              |
-| `stream`            | Enable streaming responses.                     | `stream=True`                       |
-| `system_prompt`     | Set an initial system prompt.                   | `system_prompt="The system prompt"` |
-| `max_tokens`        | Set the maximum number of response tokens.      | `max_tokens=100`                    |
-| `temperature`       | Adjust the randomness of the response.          | `temperature=0.7`                   |
-| `top_p`             | Set nucleus sampling threshold.                 | `top_p=0.9`                         |
-| `top_k`             | Number of top tokens to consider for filtering. | `top_k=40`                          |
-| `presence_penalty`  | Penalize new tokens based on their presence.    | `presence_penalty=0.5`              |
-| `frequency_penalty` | Penalize new tokens based on their frequency.   | `frequency_penalty=0.5`             |
+| Option(s)           | Description                                     | Example Usage                               |
+|---------------------|-------------------------------------------------|---------------------------------------------|
+| `api_key`           | Your Perplexity API key.                        | `api_key="your_api_key"`                    |
+| `query`             | Your query for the online search model.         | `query="Your search query"`                 |
+| `model`             | Select the model for your session.              | `model="pplx-70b-chat"`                      |
+| `stream`            | Enable streaming responses.                     | `stream=True`                               |
+| `system_prompt`     | Set an initial system prompt.                   | `system_prompt="The initial system prompt"` |
+| `max_tokens`        | Set the maximum number of response tokens.      | `max_tokens=100`                            |
+| `temperature`       | Adjust the randomness of the response.          | `temperature=0.7`                           |
+| `top_p`             | Set nucleus sampling threshold.                 | `top_p=0.9`                                 |
+| `top_k`             | Number of top tokens to consider for filtering. | `top_k=40`                                  |
+| `presence_penalty`  | Penalize new tokens based on their presence.    | `presence_penalty=0.5`                      |
+| `frequency_penalty` | Penalize new tokens based on their frequency.   | `frequency_penalty=0.5`                     |
 
 ### Usage Details
 | Option(s)           | Details                                                                                                      |
@@ -175,12 +181,12 @@ This section provides a comprehensive overview of each configuration option avai
 
 ### CLI Tool
 
-#### Online Search Session with Advanced Settings
+#### Online Search Session *with Advanced Settings*
 ```bash
 python pplx_cli.py search --api_key "YOUR_API_KEY_HERE" --query "What is today's date?" --stream
 ```
 
-#### Chat Session with Advanced Settings
+#### Chat Session *with Advanced Settings*
 ```bash
 python pplx_cli.py chat --api_key "YOUR_API_KEY_HERE" --model "llama-2-70b-chat" --system_prompt "You are a comedian. All of your responses should be funny." --stream
 ```
@@ -192,14 +198,14 @@ python pplx_cli.py --help
 
 ### Python Wrapper
 
-#### Online Search Session with Advanced Settings
+#### Online Search Session *with Advanced Settings*
 ```python
 from pplx_search import SearchAPI
 
 SearchAPI().search(api_key="YOUR_API_KEY_HERE", query="What is today's date?", stream=True)
 ```
 
-#### Chat Session with Advanced Settings
+#### Chat Session *with Advanced Settings*
 
 ```python
 from pplx_chat import ChatAPI
