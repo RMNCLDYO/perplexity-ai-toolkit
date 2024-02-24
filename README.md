@@ -31,8 +31,8 @@ The tool was crafted to support both individuals seeking direct access to AI-pow
 
 - **Command-Line Interface (CLI)**: Search online (in real-time) or engage in conversational chats (similar to ChatGPT) directly from the terminal.
 - **Python Wrapper**: Enables seamless interaction with the full suite of AI models offered by Perplexity Labs using just two lines of code.
-- **Diverse Model Selection**: Choose from an extensive range of models including `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`, optimized for specific tasks like conversation and web search, ensuring the right fit for every project.
-- **Customizable AI Experience**: Tailor AI behavior to your exact needs with adjustable settings for model choice, response style, output length, and more, granting unparalleled access and control a variety of large language models.
+- **Diverse Model Selection**: Choose from an extensive range of models including `sonar-small-chat`, `sonar-small-online`, `sonar-medium-chat`, `sonar-medium-online`, `codellama-34b-instruct`, `codellama-70b-instruct`, `llama-2-70b-chat`, `mistral-7b-instruct`, `mixtral-8x7b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, and `pplx-70b-online`, optimized for specific tasks like conversation and web search, ensuring the right fit for every project.
+- **Customizable AI Experience**: Tailor AI behavior to your exact needs with adjustable settings for model choice, response style, output length, and more, granting unparalleled access and control to a variety of large language models.
 
 ## Prerequisites
 
@@ -135,7 +135,7 @@ This section provides a comprehensive overview of each configuration option avai
 | `search`                     | Start a new search session with a query.        | `search --query "Your search query"`           |
 | `-a`, `--api_key`            | Your Perplexity API key.                        | `--api_key your_api_key`                       |
 | `-q`, `--query`              | Your online search query.                       | `--search --query "Your search query"`         |
-| `-m`, `--model`              | Select the model for your session.              | `--model "pplx-70b-chat"`                        |
+| `-m`, `--model`              | Select the model for your session.              | `--model "sonar-medium-chat"`                        |
 | `-st`, `--stream`            | Enable streaming responses.                     | `--stream`                                     |
 | `-sp`, `--system_prompt`     | Set an initial system prompt.                   | `--system_prompt "The initial system prompt"`  |
 | `-mt`, `--max_tokens`        | Set the maximum number of response tokens.      | `--max_tokens 100`                             |
@@ -150,7 +150,7 @@ This section provides a comprehensive overview of each configuration option avai
 |---------------------|-------------------------------------------------|---------------------------------------------|
 | `api_key`           | Your Perplexity API key.                        | `api_key="your_api_key"`                    |
 | `query`             | Your query for the online search model.         | `query="Your search query"`                 |
-| `model`             | Select the model for your session.              | `model="pplx-70b-chat"`                      |
+| `model`             | Select the model for your session.              | `model="sonar-medium-online"`                      |
 | `stream`            | Enable streaming responses.                     | `stream=True`                               |
 | `system_prompt`     | Set an initial system prompt.                   | `system_prompt="The initial system prompt"` |
 | `max_tokens`        | Set the maximum number of response tokens.      | `max_tokens=100`                            |
@@ -167,7 +167,7 @@ This section provides a comprehensive overview of each configuration option avai
 | `search`            | Begins a web search session using the provided query string. *(CLI ONLY)*                                    |
 | `api_key`           | Required for authenticating API requests. Your unique API key can be obtained from your Perplexity account.  |
 | `query`             | Specifies the search query for web search sessions. Only applicable with the --search flag.                  |
-| `model`             | The name of the model that will complete your prompt. Possible values include `codellama-70b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, `pplx-70b-online`, `llama-2-70b-chat`, `codellama-34b-instruct`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`.                   |
+| `model`             | The name of the model that will complete your prompt. Options include `sonar-small-chat`, `sonar-small-online`, `sonar-medium-chat`, `sonar-medium-online`, `codellama-34b-instruct`, `codellama-70b-instruct`, `llama-2-70b-chat`, `mistral-7b-instruct`, `mixtral-8x7b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, and `pplx-70b-online`.                   |
 | `stream`            | Enabling this feature will deliver the response in incremental segments, providing users with a continuous flow of data, akin to the way services like ChatGPT transmit information.                         |
 | `system_prompt`     | The initial system prompt. The system prompt explicitly sets the instructions for the model.                                                   |
 | `max_tokens`        | The maximum number of completion tokens returned by the API. The total number of tokens requested in max_tokens plus the number of prompt tokens sent in messages must not exceed the context window token limit of model requested. If left unspecified, then the model will generate tokens until either it reaches its stop token or the end of its context window.         |
@@ -188,7 +188,7 @@ python pplx_cli.py search --api_key "YOUR_API_KEY_HERE" --query "What is today's
 
 #### Chat Session *with Advanced Settings*
 ```bash
-python pplx_cli.py chat --api_key "YOUR_API_KEY_HERE" --model "llama-2-70b-chat" --system_prompt "You are a comedian. All of your responses should be funny." --stream
+python pplx_cli.py chat --api_key "YOUR_API_KEY_HERE" --model "sonar-medium-chat" --system_prompt "You are a comedian. All of your responses should be funny." --stream
 ```
 
 #### Help
@@ -215,35 +215,49 @@ ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="llama-2-70b-chat", system_pro
 
 ## Available Models
 
-| Model                    | Context Length (*max tokens*)   |
-|--------------------------|---------------------------------|
-| `codellama-34b-instruct` | 16384                           |
-| `codellama-70b-instruct` | 16384                           |
-| `llama-2-70b-chat`       | 4096                            |
-| `mistral-7b-instruct`    | 8192                            |
-| `mixtral-8x7b-instruct`  | 8192                            |
-| `pplx-7b-chat`           | 8192                            |
-| `pplx-70b-chat`          | 8192                            |
-| `pplx-7b-online`         | 8192                            |
-| `pplx-70b-online`        | 8192                            |
+| **Model**                 	| **Parameter Count** 	| **Context Length** 	| **Model Type**  	|
+|---------------------------	|---------------------	|--------------------	|-----------------	|
+| sonar-small-chat          	| 7B                  	| 16384              	| Chat Completion 	|
+| sonar-small-online        	| 7B                  	| 12000              	| Chat Completion 	|
+| sonar-medium-chat         	| 8x7B                	| 16384              	| Chat Completion 	|
+| sonar-medium-online       	| 8x7B                	| 12000              	| Chat Completion 	|
+| codellama-34b-instruct [3] 	| 34B                 	| 16384              	| Chat Completion 	|
+| codellama-70b-instruct    	| 70B                 	| 16384              	| Chat Completion 	|
+| llama-2-70b-chat [3]       	| 70B                 	| 4096               	| Chat Completion 	|
+| mistral-7b-instruct [1]   	| 7B                  	| 16384              	| Chat Completion 	|
+| mixtral-8x7b-instruct     	| 8x7B                	| 16384              	| Chat Completion 	|
+| pplx-7b-chat [2] [3]       	| 7B                  	| 16384              	| Chat Completion 	|
+| pplx-7b-online [2] [3]     	| 7B                  	| 12000              	| Chat Completion 	|
+| pplx-70b-chat [3]          	| 70B                 	| 8192               	| Chat Completion 	|
+| pplx-70b-online [3]        	| 70B                 	| 4000               	| Chat Completion 	|
 
-**Last updated February 22, 2024*
+>
+    [1] This model refers to the v0.2 release of mistral-7b-instruct.
+    [2] This model is an alias of sonar-small-chat.
+    [3] This model is deprecated and will no longer be accessible on March 15.
+
+### Online LLMs
+It is recommended to use only single-turn conversations and avoid system prompts for the online LLMs (`sonar-1-small-online` and `sonar-1-medium-online`).
+
+**Last updated February 23, 2024*
 
 ## API Rate Limits
 
-| Model                  | Request rate limit                         | Token rate limit                                         |
-|------------------------|--------------------------------------------|----------------------------------------------------------|
-| mistral-7b-instruct    | - 10/5seconds<br>- 50/minute<br>- 500/hour | - 8000/10seconds<br>- 80000/minute<br>- 256000/10minutes |
-| mixtral-8x7b-instruct  | - 4/5seconds<br>- 12/minute<br>- 120/hour  | - 8000/minute<br>- 32000/10minutes                       |
-| codellama-34b-instruct | - 10/5seconds<br>- 30/minute<br>- 300/hour | - 20000/minute<br>- 80000/10minutes                      |
-| codellama-70b-instruct | - 10/5seconds<br>- 30/minute<br>- 300/hour | - 20000/minute<br>- 80000/10minutes                      |
-| llama-2-70b-chat       | - 4/5seconds<br>- 12/minute<br>- 120/hour  | - 8000/minute<br>- 32000/10minutes                       |
-| pplx-7b-chat           | - 4/5seconds<br>- 12/minute<br>- 120/hour  | - 8000/minute<br>- 32000/10minutes                       |
-| pplx-70b-chat          | - 4/5seconds<br>- 12/minute<br>- 120/hour  | - 8000/minute<br>- 32000/10minutes                       |
-| pplx-7b-online         | - 10/minute                                | N/A                                                      |
-| pplx-70b-online        | - 10/minute                                | N/A                                                      |
+| **Model**              	| **Request rate limit**                       	| **Token rate limit**                                       	|
+|------------------------	|----------------------------------------------	|------------------------------------------------------------	|
+| sonar-small-chat       	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
+| sonar-small-online     	| - 20/minute                                  	| N/A                                                        	|
+| sonar-medium-chat      	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
+| sonar-medium-online    	| - 20/minute                                  	| N/A                                                        	|
+| pplx-70b-chat          	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
+| pplx-70b-online        	| - 20/minute                                  	| N/A                                                        	|
+| mistral-7b-instruct    	| - 20/5seconds<br>- 100/minute<br>- 1000/hour 	| - 16000/10seconds<br>- 160000/minute<br>- 512000/10minutes 	|
+| mixtral-8x7b-instruct  	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
+| codellama-34b-instruct 	| - 20/5seconds<br>- 60/minute<br>- 600/hour   	| - 40000/minute<br>- 160000/10minutes                       	|
+| codellama-70b-instruct 	| - 20/5seconds<br>- 60/minute<br>- 600/hour   	| - 40000/minute<br>- 160000/10minutes                       	|
+| llama-2-70b-chat       	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
 
-**Last updated February 22, 2024*
+**Last updated February 23, 2024*
 
 ## Contributing
 Contributions are welcome!
