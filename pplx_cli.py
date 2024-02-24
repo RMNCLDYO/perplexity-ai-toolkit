@@ -13,7 +13,7 @@ def main():
     subparsers = parser.add_subparsers(dest='command', required=True, help='Sub-command help')
 
     chat_parser = subparsers.add_parser('chat', help='Start a new chat session')
-    chat_parser.add_argument('-a', '--api_key', type=str, required=True, help='Your Perplexity API key')
+    chat_parser.add_argument('-a', '--api_key', type=str, help='Your Perplexity API key')
     chat_parser.add_argument('-m', '--model', type=str, default='sonar-medium-chat', 
                              choices=['sonar-small-chat', 'sonar-medium-chat', 'sonar-small-online', 'sonar-medium-online', 'codellama-34b-instruct', 'codellama-70b-instruct', 'llama-2-70b-chat', 'mistral-7b-instruct', 'mixtral-8x7b-instruct', 'pplx-7b-chat', 'pplx-70b-chat', 'pplx-7b-online', 
                                       'pplx-70b-online'],
@@ -29,7 +29,7 @@ def main():
     chat_parser.add_argument('-fp', '--frequency_penalty', type=float, help='Penalty for new tokens based on their frequency (>0)')
 
     search_parser = subparsers.add_parser('search', help='Search the web with perplexity')
-    search_parser.add_argument('-a', '--api_key', type=str, required=True, help='Your Perplexity API key')
+    search_parser.add_argument('-a', '--api_key', type=str, help='Your Perplexity API key')
     search_parser.add_argument('-m', '--model', type=str, default='sonar-medium-online', 
                                choices=['sonar-small-online', 'sonar-medium-online', 'pplx-7b-online', 'pplx-70b-online'], 
                                help='The name of the model to use for search')
