@@ -210,7 +210,7 @@ SearchAPI().search(api_key="YOUR_API_KEY_HERE", query="What is today's date?", s
 ```python
 from pplx_chat import ChatAPI
 
-ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="llama-2-70b-chat", system_prompt="You are a comedian. All of your responses should be funny.", stream=True)
+ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="mixtral-8x7b-instruct", system_prompt="You are a comedian. All of your responses should be funny.", stream=True)
 ```
 
 ## Available Models
