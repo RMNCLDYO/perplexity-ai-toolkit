@@ -1,11 +1,11 @@
 from base_api import BaseAPI
 
 class ChatAPI(BaseAPI):
-    def chat(self, api_key=None, model="pplx-70b-chat", system_prompt="You are an advanced AI assistant.", max_tokens=None, temperature=None, top_p=None, top_k=None, stream=False, presence_penalty=None, frequency_penalty=None):
+    def chat(self, api_key=None, model="sonar-medium-chat", system_prompt="You are an advanced AI assistant.", max_tokens=None, temperature=None, top_p=None, top_k=None, stream=False, presence_penalty=None, frequency_penalty=None):
         print("------------------------------------------------------------------\n")
         print("                           Perplexity.AI                          \n")
         print("               API Wrapper & Command-line Interface               \n")
-        print("                       [v1.1.0] by @rmncldyo                      \n")
+        print("                       [v1.1.1] by @rmncldyo                      \n")
         print("------------------------------------------------------------------\n")
         
         self.api_key = api_key
