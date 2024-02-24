@@ -1,11 +1,11 @@
 from base_api import BaseAPI
 
 class SearchAPI(BaseAPI):
-    def search(self, api_key=None, model="pplx-70b-online", query=None, system_prompt="You are an advanced AI assistant that can search the web.", max_tokens=None, temperature=None, top_p=None, top_k=None, stream=False, presence_penalty=None, frequency_penalty=None):
+    def search(self, api_key=None, model="sonar-medium-online", query=None, system_prompt=None, max_tokens=None, temperature=None, top_p=None, top_k=None, stream=False, presence_penalty=None, frequency_penalty=None):
         print("------------------------------------------------------------------\n")
         print("                           Perplexity.AI                          \n")
         print("               API Wrapper & Command-line Interface               \n")
-        print("                       [v1.1.0] by @rmncldyo                      \n")
+        print("                       [v1.1.1] by @rmncldyo                      \n")
         print("------------------------------------------------------------------\n")
         
         self.api_key = api_key
