@@ -14,10 +14,9 @@ def main():
 
     chat_parser = subparsers.add_parser('chat', help='Start a new chat session')
     chat_parser.add_argument('-a', '--api_key', type=str, required=True, help='Your Perplexity API key')
-    chat_parser.add_argument('-m', '--model', type=str, default='pplx-70b-chat', 
-                             choices=['codellama-70b-instruct', 'pplx-7b-chat', 'pplx-70b-chat', 'pplx-7b-online', 
-                                      'pplx-70b-online', 'llama-2-70b-chat', 'codellama-34b-instruct', 
-                                      'mistral-7b-instruct', 'mixtral-8x7b-instruct'],
+    chat_parser.add_argument('-m', '--model', type=str, default='sonar-medium-chat', 
+                             choices=['sonar-small-chat', 'sonar-medium-chat', 'sonar-small-online', 'sonar-medium-online', 'codellama-34b-instruct', 'codellama-70b-instruct', 'llama-2-70b-chat', 'mistral-7b-instruct', 'mixtral-8x7b-instruct', 'pplx-7b-chat', 'pplx-70b-chat', 'pplx-7b-online', 
+                                      'pplx-70b-online'],
                              help='The name of the model to use for chat')
     chat_parser.add_argument('-sp', '--system_prompt', type=str, default="You are an advanced AI assistant.", 
                              help='The initial system prompt setting instructions for the model')
@@ -31,8 +30,8 @@ def main():
 
     search_parser = subparsers.add_parser('search', help='Search the web with perplexity')
     search_parser.add_argument('-a', '--api_key', type=str, required=True, help='Your Perplexity API key')
-    search_parser.add_argument('-m', '--model', type=str, default='pplx-70b-online', 
-                               choices=['pplx-7b-online', 'pplx-70b-online'], 
+    search_parser.add_argument('-m', '--model', type=str, default='sonar-medium-online', 
+                               choices=['sonar-small-online', 'sonar-medium-online', 'pplx-7b-online', 'pplx-70b-online'], 
                                help='The name of the model to use for search')
     search_parser.add_argument('-q', '--query', type=str, required=True, help='The search prompt or question')
     search_parser.add_argument('-sp', '--system_prompt', type=str, default="You are an advanced AI assistant.", 
