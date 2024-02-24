@@ -4,6 +4,17 @@ All notable changes to the project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 02/23/2024
+
+### Added
+- Support for Perplexity Labs latest `sonar-small-chat`, `sonar-small-online`, `sonar-medium-chat`, and `sonar-medium-online` AI models offering improvements in cost-efficiency, speed, and performance.
+- Extended context window support, now accommodating up to 16k tokens for models like `mixtral-8x7b-instruct` and all Perplexity models.
+- Increased public rate limits across all models to accommodate approximately 2x more requests.
+
+
+> [!WARNING]  
+> On March 15, the `pplx-70b-chat`, `pplx-70b-online`, `llama-2-70b-chat`, and `codellama-34b-instruct` models will no longer be available through the Perplexity API.
+
 ## [1.1.0] - 02/22/2024
 
 ### Added
