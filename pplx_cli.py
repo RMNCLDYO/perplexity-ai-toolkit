@@ -15,7 +15,7 @@ def main():
     ------------------------------------------------------------------
                                Perplexity.AI                          
                    API Wrapper & Command-line Interface               
-                           [v1.1.1] by @rmncldyo                      
+                           [v1.1.2] by @rmncldyo                      
     ------------------------------------------------------------------
 
     Search the web with AI or chat with a suite of large language models. 
