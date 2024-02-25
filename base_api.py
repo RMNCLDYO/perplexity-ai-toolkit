@@ -1,5 +1,5 @@
 import os
-import time
+import sys
 import json
 import requests
 from loading import Loading
@@ -25,6 +25,7 @@ class BaseAPI:
         self.api_key = self.api_key if self.api_key else self.get_api_key()
         headers = self.get_headers()
         headers["content-type"] = "application/json"
+        loading = Loading()
         try:
             if self.stream:
                 full_response = []
@@ -41,23 +42,30 @@ class BaseAPI:
                 print()
                 return ''.join(full_response)
             else:
-                loading = Loading()
                 loading.start()
-                try:
-                    response = requests.post(f"{self.base_url}{endpoint}", headers=headers, json=payload)
+                response = requests.post(f"{self.base_url}{endpoint}", headers=headers, json=payload)
+                if response.ok:
                     response.raise_for_status()
                     response = response.json()
-                    if response:
-                        loading.stop()
-                        if response['choices'][0]['message']['role'] == "assistant":
+                    if response and response['choices'][0]['message']['role'] == "assistant":
+                            loading.stop()
                             print("Assistant:", response['choices'][0]['message']['content'].strip())
                             return(response['choices'][0]['message']['content'])
                     else:
                         print("No response or an error occurred.")
-                except requests.RequestException as e:
-                    raise ValueError(f"\nError communicating with API: {e}")
+                else:
+                    try:
+                        error_message = response.json().get('error', {}).get('message', 'An unknown error occurred.')
+                    except ValueError:
+                        error_message = response.text or 'An unknown error occurred.'
+                    raise requests.RequestException(f"- \u001b[33m(Status Code: {response.status_code})\u001b[0m\n\u001b[1m{error_message}\u001b[0m")
         except requests.RequestException as e:
-            raise ValueError(f"\nError communicating with API: {e}")
+            loading.stop()
+            os.system("clear" if os.name == "posix" else "cls")
+            print("\u001b[1m\u001b[31m[ ERROR ]\u001b[0m\u001b[0m", e, "\n")
+            sys.exit(1)
+        finally:
+            loading.stop()
 
     @staticmethod
     def get_api_key():
