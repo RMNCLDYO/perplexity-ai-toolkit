@@ -4,13 +4,46 @@ All notable changes to the project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 02/25/2024
+
+`base_api.py`
+
+### Improved
+
+- Enhanced error handling in the post method to provide clearer error messages and gracefully exit the application upon encountering a critical error, improving user experience and debuggability.
+- Added a finally block to ensure that the loading animation is always stopped, even if an error occurs, preventing potential terminal display issues.
+- Modified the loading animation to start only in non-streaming requests to avoid overlap with streaming output, enhancing output readability.
+- Streamlined the API key retrieval process with a more descriptive error message if the API key is not found, aiding users in configuration setup.
+
+### Fixed
+
+- Fixed an issue where the loading animation could potentially continue running or the cursor remained hidden if an exception was thrown during a request.
+- Addressed a potential bug by ensuring the terminal is cleared only on error, preserving user input and previous interactions for reference.
+
+`pplx_cli.py`
+
+### Added
+
+-Introduced a custom argparse formatter CustomFormatter combining ArgumentDefaultsHelpFormatter and RawDescriptionHelpFormatter to improve the help text readability.
+- Implemented detailed command descriptions and examples in the CLI help output, providing immediate guidance to users without external documentation.
+
+### Changed
+
+- Unified the -a, --api_key argument declaration across both chat and search commands to improve code maintainability.
+- Implemented a shared function to add common arguments to both chat and search parsers, reducing code duplication.
+- Updated argument descriptions for enhanced clarity, making it easier for users to understand the purpose and usage of each command.
+- Modified all argument metavariables to an empty string, streamlining the help output by removing uppercase type hints for a cleaner interface.
+
+### Removed
+
+- Eliminated redundant argument declarations, specifically for --api_key in both chat and search subparsers, centralizing its declaration for cleaner code.
+
 ## [1.1.1] - 02/23/2024
 
 ### Added
 - Support for Perplexity Labs latest `sonar-small-chat`, `sonar-small-online`, `sonar-medium-chat`, and `sonar-medium-online` AI models offering improvements in cost-efficiency, speed, and performance.
 - Extended context window support, now accommodating up to 16k tokens for models like `mixtral-8x7b-instruct` and all Perplexity models.
 - Increased public rate limits across all models to accommodate approximately 2x more requests.
-
 
 > [!WARNING]  
 > On March 15, the `pplx-70b-chat`, `pplx-70b-online`, `llama-2-70b-chat`, and `codellama-34b-instruct` models will no longer be available through the Perplexity API.
