@@ -17,7 +17,11 @@
 
 <p align="center">
     <a href="/">
-        <img width="700" src="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/logo.png">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/pplx-logo-dark.png">
+          <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/pplx-logo-light.png">
+          <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." width="500" src="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/pplx-logo-light.png">
+        </picture>
     </a>
 </p>
 
