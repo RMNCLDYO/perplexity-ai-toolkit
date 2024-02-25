@@ -5,7 +5,7 @@ class SearchAPI(BaseAPI):
         print("------------------------------------------------------------------\n")
         print("                           Perplexity.AI                          \n")
         print("               API Wrapper & Command-line Interface               \n")
-        print("                       [v1.1.1] by @rmncldyo                      \n")
+        print("                       [v1.1.2] by @rmncldyo                      \n")
         print("------------------------------------------------------------------\n")
         
         self.api_key = api_key
