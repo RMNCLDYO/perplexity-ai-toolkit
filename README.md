@@ -31,7 +31,7 @@ The tool was crafted to support both individuals seeking direct access to AI-pow
 
 - **Command-Line Interface (CLI)**: Search online (in real-time) or engage in conversational chats (similar to ChatGPT) directly from the terminal.
 - **Python Wrapper**: Enables seamless interaction with the full suite of AI models offered by Perplexity Labs using just two lines of code.
-- **Diverse Model Selection**: Choose from an extensive range of models including `sonar-small-chat`, `sonar-small-online`, `sonar-medium-chat`, `sonar-medium-online`, `codellama-34b-instruct`, `codellama-70b-instruct`, `llama-2-70b-chat`, `mistral-7b-instruct`, `mixtral-8x7b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, and `pplx-70b-online`, optimized for specific tasks like conversation and web search, ensuring the right fit for every project.
+- **Diverse Model Selection**: Choose from an extensive range of models including `sonar-small-chat`, `sonar-small-online`, `sonar-medium-chat`, `sonar-medium-online`, `codellama-34b-instruct`, `codellama-70b-instruct`, `llama-2-70b-chat`, `mistral-7b-instruct`, and `mixtral-8x7b-instruct`, optimized for specific tasks like conversation and web search, ensuring the right fit for every project.
 - **Customizable AI Experience**: Tailor AI behavior to your exact needs with adjustable settings for model choice, response style, output length, and more, granting unparalleled access and control to a variety of large language models.
 
 ## Prerequisites
