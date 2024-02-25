@@ -100,7 +100,16 @@ python pplx_cli.py chat
 
 #### Help
 ```bash
+# General Help
 python pplx_cli.py --help
+```
+```bash
+# Search Help
+python pplx_cli.py search --help
+```
+```bash
+# Chat Help
+python pplx_cli.py chat --help
 ```
 
 ### Python Wrapper
@@ -129,36 +138,36 @@ ChatAPI().chat()
 This section provides a comprehensive overview of each configuration option available through the command-line and wrapper interfaces, including their cli flags, example cli and wrapper usage, parameter limits, and detailed descriptions of each option to guide you in customizing your interactions with the full suite of AI models offered by Perplexity Labs.
 
 ### CLI Options
-| Option(s)                    | Description                                     | Example Usage                                  |
-|------------------------------|-------------------------------------------------|------------------------------------------------|
-| `chat`                       | Start a new chat session.                       | `chat`                                         |
-| `search`                     | Start a new search session with a query.        | `search --query "Your search query"`           |
-| `-a`, `--api_key`            | Your Perplexity API key.                        | `--api_key your_api_key`                       |
-| `-q`, `--query`              | Your online search query.                       | `--search --query "Your search query"`         |
+| Option(s)                    | Description                                     | Example Usage                                        |
+|------------------------------|-------------------------------------------------|------------------------------------------------------|
+| `chat`                       | Start a conversation with an AI model.          | `chat`                                               |
+| `search`                     | Search the web in real-time with Perplexity.    | `search --query "enter your search here"`                 |
+| `-a`, `--api_key`            | Your Perplexity API key.                        | `--api_key your_api_key`                             |
+| `-q`, `--query`              | Your online search query.                       | `--query "enter your search here"`                        |
 | `-m`, `--model`              | Select the model for your session.              | `--model "sonar-medium-chat"`                        |
-| `-st`, `--stream`            | Enable streaming responses.                     | `--stream`                                     |
-| `-sp`, `--system_prompt`     | Set an initial system prompt.                   | `--system_prompt "The initial system prompt"`  |
-| `-mt`, `--max_tokens`        | Set the maximum number of response tokens.      | `--max_tokens 100`                             |
-| `-t`, `--temperature`        | Adjust the randomness of the response.          | `--temperature 0.7`                            |
-| `-tp`, `--top_p`             | Set nucleus sampling threshold.                 | `--top_p 0.9`                                  |
-| `-tk`, `--top_k`             | Number of top tokens to consider for filtering. | `--top_k 40`                                   |
-| `-pp`, `--presence_penalty`  | Penalize new tokens based on their presence.    | `--presence_penalty 0.5`                       |
-| `-fp`, `--frequency_penalty` | Penalize new tokens based on their frequency.   | `--frequency_penalty 0.5`                      |
+| `-st`, `--stream`            | Enable streaming responses.                     | `--stream`                                           |
+| `-sp`, `--system_prompt`     | Set an initial system prompt.                   | `--system_prompt "you are an advanced ai assistant"` |
+| `-mt`, `--max_tokens`        | Set the maximum number of response tokens.      | `--max_tokens 100`                                   |
+| `-t`, `--temperature`        | Adjust the randomness of the response.          | `--temperature 0.7`                                  |
+| `-tp`, `--top_p`             | Set nucleus sampling threshold.                 | `--top_p 0.9`                                        |
+| `-tk`, `--top_k`             | Number of top tokens to consider for filtering. | `--top_k 40`                                         |
+| `-pp`, `--presence_penalty`  | Penalize new tokens based on their presence.    | `--presence_penalty 0.5`                             |
+| `-fp`, `--frequency_penalty` | Penalize new tokens based on their frequency.   | `--frequency_penalty 0.5`                            |
 
 ### Wrapper Options
-| Option(s)           | Description                                     | Example Usage                               |
-|---------------------|-------------------------------------------------|---------------------------------------------|
-| `api_key`           | Your Perplexity API key.                        | `api_key="your_api_key"`                    |
-| `query`             | Your query for the online search model.         | `query="Your search query"`                 |
+| Option(s)           | Description                                     | Example Usage                                      |
+|---------------------|-------------------------------------------------|----------------------------------------------------|
+| `api_key`           | Your Perplexity API key.                        | `api_key="your_api_key"`                           |
+| `query`             | Your query for the online search model.         | `query="enter your search here"`                   |
 | `model`             | Select the model for your session.              | `model="sonar-medium-online"`                      |
-| `stream`            | Enable streaming responses.                     | `stream=True`                               |
-| `system_prompt`     | Set an initial system prompt.                   | `system_prompt="The initial system prompt"` |
-| `max_tokens`        | Set the maximum number of response tokens.      | `max_tokens=100`                            |
-| `temperature`       | Adjust the randomness of the response.          | `temperature=0.7`                           |
-| `top_p`             | Set nucleus sampling threshold.                 | `top_p=0.9`                                 |
-| `top_k`             | Number of top tokens to consider for filtering. | `top_k=40`                                  |
-| `presence_penalty`  | Penalize new tokens based on their presence.    | `presence_penalty=0.5`                      |
-| `frequency_penalty` | Penalize new tokens based on their frequency.   | `frequency_penalty=0.5`                     |
+| `stream`            | Enable streaming responses.                     | `stream=True`                                      |
+| `system_prompt`     | Set an initial system prompt.                   | `system_prompt="you are an advanced ai assistant"` |
+| `max_tokens`        | Set the maximum number of response tokens.      | `max_tokens=100`                                   |
+| `temperature`       | Adjust the randomness of the response.          | `temperature=0.7`                                  |
+| `top_p`             | Set nucleus sampling threshold.                 | `top_p=0.9`                                        |
+| `top_k`             | Number of top tokens to consider for filtering. | `top_k=40`                                         |
+| `presence_penalty`  | Penalize new tokens based on their presence.    | `presence_penalty=0.5`                             |
+| `frequency_penalty` | Penalize new tokens based on their frequency.   | `frequency_penalty=0.5`                            |
 
 ### Usage Details
 | Option(s)           | Details                                                                                                      |
@@ -193,7 +202,16 @@ python pplx_cli.py chat --api_key "YOUR_API_KEY_HERE" --model "sonar-medium-chat
 
 #### Help
 ```bash
+# General Help
 python pplx_cli.py --help
+```
+```bash
+# Search Help
+python pplx_cli.py search --help
+```
+```bash
+# Chat Help
+python pplx_cli.py chat --help
 ```
 
 ### Python Wrapper
@@ -215,49 +233,54 @@ ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="mixtral-8x7b-instruct", syste
 
 ## Available Models
 
-| **Model**                 	| **Parameter Count** 	| **Context Length** 	| **Model Type**  	|
-|---------------------------	|---------------------	|--------------------	|-----------------	|
-| sonar-small-chat          	| 7B                  	| 16384              	| Chat Completion 	|
-| sonar-small-online        	| 7B                  	| 12000              	| Chat Completion 	|
-| sonar-medium-chat         	| 8x7B                	| 16384              	| Chat Completion 	|
-| sonar-medium-online       	| 8x7B                	| 12000              	| Chat Completion 	|
-| codellama-34b-instruct [3] 	| 34B                 	| 16384              	| Chat Completion 	|
-| codellama-70b-instruct    	| 70B                 	| 16384              	| Chat Completion 	|
-| llama-2-70b-chat [3]       	| 70B                 	| 4096               	| Chat Completion 	|
-| mistral-7b-instruct [1]   	| 7B                  	| 16384              	| Chat Completion 	|
-| mixtral-8x7b-instruct     	| 8x7B                	| 16384              	| Chat Completion 	|
-| pplx-7b-chat [2] [3]       	| 7B                  	| 16384              	| Chat Completion 	|
-| pplx-7b-online [2] [3]     	| 7B                  	| 12000              	| Chat Completion 	|
-| pplx-70b-chat [3]          	| 70B                 	| 8192               	| Chat Completion 	|
-| pplx-70b-online [3]        	| 70B                 	| 4000               	| Chat Completion 	|
+### Perplexity Models
 
->
-    [1] This model refers to the v0.2 release of mistral-7b-instruct.
-    [2] This model is an alias of sonar-small-chat.
-    [3] This model is deprecated and will no longer be accessible on March 15.
+| **Model**           	| **Parameter Count** 	| **Context Length *(max_tokens)*** 	| **Model Type**  	|
+|---------------------	|---------------------	|-----------------------------------	|-----------------	|
+| sonar-small-chat    	| 7B                  	| 16384                             	| Chat Completion 	|
+| sonar-small-online  	| 7B                  	| 12000                             	| Chat Completion 	|
+| sonar-medium-chat   	| 8x7B                	| 16384                             	| Chat Completion 	|
+| sonar-medium-online 	| 8x7B                	| 12000                             	| Chat Completion 	|
+
+### Open-Source Models
+
+Where possible, Perplexity tries to match the Hugging Face implementation.
+
+| **Model**               	| **Parameter Count** 	| **Context Length *(max_tokens)*** 	| **Model Type**  	|
+|-------------------------	|---------------------	|-----------------------------------	|-----------------	|
+| codellama-70b-instruct  	| 70B                 	| 16384                             	| Chat Completion 	|
+| mistral-7b-instruct [1] 	| 7B                  	| 16384                             	| Chat Completion 	|
+| mixtral-8x7b-instruct   	| 8x7B                	| 16384                             	| Chat Completion 	|
+
+> [1] This model refers to the v0.2 release of `mistral-7b-instruct`.
 
 ### Online LLMs
-It is recommended to use only single-turn conversations and avoid system prompts for the online LLMs (`sonar-1-small-online` and `sonar-1-medium-online`).
+It is recommended to use only single-turn conversations and avoid system prompts for the online LLMs (`sonar-small-online` and `sonar-medium-online`).
 
-**Last updated February 23, 2024*
+**Last updated February 25, 2024*
 
 ## API Rate Limits
 
-| **Model**              	| **Request rate limit**                       	| **Token rate limit**                                       	|
-|------------------------	|----------------------------------------------	|------------------------------------------------------------	|
-| sonar-small-chat       	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
-| sonar-small-online     	| - 20/minute                                  	| N/A                                                        	|
-| sonar-medium-chat      	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
-| sonar-medium-online    	| - 20/minute                                  	| N/A                                                        	|
-| pplx-70b-chat          	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
-| pplx-70b-online        	| - 20/minute                                  	| N/A                                                        	|
-| mistral-7b-instruct    	| - 20/5seconds<br>- 100/minute<br>- 1000/hour 	| - 16000/10seconds<br>- 160000/minute<br>- 512000/10minutes 	|
-| mixtral-8x7b-instruct  	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
-| codellama-34b-instruct 	| - 20/5seconds<br>- 60/minute<br>- 600/hour   	| - 40000/minute<br>- 160000/10minutes                       	|
-| codellama-70b-instruct 	| - 20/5seconds<br>- 60/minute<br>- 600/hour   	| - 40000/minute<br>- 160000/10minutes                       	|
-| llama-2-70b-chat       	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
+Perplexity limits usage for model if a user's request rate or token usage rate exceeds any of the limits for that model.
 
-**Last updated February 23, 2024*
+### Perplexity Models
+
+| **Model**             	| **Request rate limit**                    	| **Token rate limit**                	|
+|-----------------------	|-------------------------------------------	|-------------------------------------	|
+| `sonar-small-chat`    	| - 8/5seconds<br>- 24/minute<br>- 240/hour 	| - 16000/minute<br>- 64000/10minutes 	|
+| `sonar-small-online`  	| - 20/minute                               	| N/A                                 	|
+| `sonar-medium-chat`   	| - 8/5seconds<br>- 24/minute<br>- 240/hour 	| - 16000/minute<br>- 64000/10minutes 	|
+| `sonar-medium-online` 	| - 20/minute                               	| N/A                                 	|
+
+### Open-Source Models
+
+| **Model**                	| **Request rate limit**                       	| **Token rate limit**                                       	|
+|--------------------------	|----------------------------------------------	|------------------------------------------------------------	|
+| `mistral-7b-instruct`    	| - 20/5seconds<br>- 100/minute<br>- 1000/hour 	| - 16000/10seconds<br>- 160000/minute<br>- 512000/10minutes 	|
+| `mixtral-8x7b-instruct`  	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
+| `codellama-70b-instruct` 	| - 20/5seconds<br>- 60/minute<br>- 600/hour   	| - 40000/minute<br>- 160000/10minutes                       	|
+
+**Last updated February 25, 2024*
 
 ## Contributing
 Contributions are welcome!
