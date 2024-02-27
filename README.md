@@ -145,9 +145,9 @@ This section provides a comprehensive overview of each configuration option avai
 | Option(s)                    | Description                                     | Example Usage                                        |
 |------------------------------|-------------------------------------------------|------------------------------------------------------|
 | `chat`                       | Start a conversation with an AI model.          | `chat`                                               |
-| `search`                     | Search the web in real-time with Perplexity.    | `search --query "enter your search here"`                 |
+| `search`                     | Search the web in real-time with Perplexity.    | `search --query "enter your search here"`            |
 | `-a`, `--api_key`            | Your Perplexity API key.                        | `--api_key your_api_key`                             |
-| `-q`, `--query`              | Your online search query.                       | `--query "enter your search here"`                        |
+| `-q`, `--query`              | Your online search query.                       | `--query "enter your search here"`                   |
 | `-m`, `--model`              | Select the model for your session.              | `--model "sonar-medium-chat"`                        |
 | `-st`, `--stream`            | Enable streaming responses.                     | `--stream`                                           |
 | `-sp`, `--system_prompt`     | Set an initial system prompt.                   | `--system_prompt "you are an advanced ai assistant"` |
