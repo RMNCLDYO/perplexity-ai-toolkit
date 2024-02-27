@@ -179,7 +179,7 @@ This section provides a comprehensive overview of each configuration option avai
 | `chat`              | Initiates a chat session with the specified model. *(CLI ONLY)*                                              |
 | `search`            | Begins a web search session using the provided query string. *(CLI ONLY)*                                    |
 | `api_key`           | Required for authenticating API requests. Your unique API key can be obtained from your Perplexity account.  |
-| `query`             | Specifies the search query for web search sessions. Only applicable with the --search flag.                  |
+| `query`             | Specifies the search query for web search sessions. Only applicable with the `--search` flag.                |
 | `model`             | The name of the model that will complete your prompt. Options include `sonar-small-chat`, `sonar-small-online`, `sonar-medium-chat`, `sonar-medium-online`, `codellama-34b-instruct`, `codellama-70b-instruct`, `llama-2-70b-chat`, `mistral-7b-instruct`, `mixtral-8x7b-instruct`, `pplx-7b-chat`, `pplx-70b-chat`, `pplx-7b-online`, and `pplx-70b-online`.                   |
 | `stream`            | Enabling this feature will deliver the response in incremental segments, providing users with a continuous flow of data, akin to the way services like ChatGPT transmit information.                         |
 | `system_prompt`     | The initial system prompt. The system prompt explicitly sets the instructions for the model.                                                   |
