@@ -125,7 +125,7 @@ from pplx_search import SearchAPI
 SearchAPI().search(query="What is today's date?")
 ```
 
-> An executable version of this example can be found [here](./examples/example_search.py)
+> An executable version of this example can be found [here](./examples/example_search.py). (*You must move this file to the root folder before running the program.*)
 
 #### Chat Session
 
@@ -135,7 +135,7 @@ from pplx_chat import ChatAPI
 ChatAPI().chat()
 ```
 
-> An executable version of this example can be found [here](./examples/example_chat.py)
+> An executable version of this example can be found [here](./examples/example_chat.py). (*You must move this file to the root folder before running the program.*)
 
 ## Advanced Configuration
 
