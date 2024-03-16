@@ -120,39 +120,23 @@ ChatAPI().chat()
 
 ## Advanced Configuration
 
-This section provides a comprehensive overview of each configuration option available through the command-line and wrapper interfaces, including their cli flags, example cli and wrapper usage, parameter limits, and detailed descriptions of each option to guide you in customizing your interactions with the full suite of AI models offered by Perplexity Labs.
+### CLI and Wrapper Options
+| **Description**                            | **CLI Flag(s)**          | **CLI Usage**                                      | **Wrapper Usage**                                |
+|--------------------------------------------|--------------------------|----------------------------------------------------|--------------------------------------------------|
+| Start a conversation with with an ai model | chat                     | chat                                               | *See mode usage above*                           |
+| Search the web in real-time                | search                   | search                                             | *See mode usage above*                           |
+| API key for authentication                 | -a, --api_key            | --api_key your_api_key                             | api_key="your_api_key"                           |
+| Search Query                               | -q, --query              | --query "enter your search here"                   | query="enter your search here"                   |
+| Model to use                               | -m, --model              | --model "sonar-medium-chat"                        | model="sonar-medium-online"                      |
+| Enable streaming mode                      | -st, --stream            | --stream                                           | stream=True                                      |
+| Set an initial system prompt.              | -sp, --system_prompt     | --system_prompt "you are an advanced ai assistant" | system_prompt="you are an advanced ai assistant" |
+| Maximum tokens to generate                 | -mt, --max_tokens        | --max_tokens 100                                   | max_tokens=100                                   |
+| Sampling temperature                       | -t, --temperature        | --temperature 0.7                                  | temperature=0.7                                  |
+| Nucleus sampling threshold                 | -tp, --top_p             | --top_p 0.9                                        | top_p=0.9                                        |
+| Top-k sampling threshold                   | -tk, --top_k             | --top_k 40                                         | top_k=40                                         |
+| Penalize tokens based on their presence    | -pp, --presence_penalty  | --presence_penalty 0.5                             | presence_penalty=0.5                             |
+| Penalize tokens based on their frequency   | -fp, --frequency_penalty | --frequency_penalty 0.5                            | frequency_penalty=0.5                            |
 
-### CLI Options
-| Option(s)                    | Description                                     | Example Usage                                        |
-|------------------------------|-------------------------------------------------|------------------------------------------------------|
-| `chat`                       | Start a conversation with an AI model.          | `chat`                                               |
-| `search`                     | Search the web in real-time with Perplexity.    | `search --query "enter your search here"`            |
-| `-a`, `--api_key`            | Your Perplexity API key.                        | `--api_key your_api_key`                             |
-| `-q`, `--query`              | Your online search query.                       | `--query "enter your search here"`                   |
-| `-m`, `--model`              | Select the model for your session.              | `--model "sonar-medium-chat"`                        |
-| `-st`, `--stream`            | Enable streaming responses.                     | `--stream`                                           |
-| `-sp`, `--system_prompt`     | Set an initial system prompt.                   | `--system_prompt "you are an advanced ai assistant"` |
-| `-mt`, `--max_tokens`        | Set the maximum number of response tokens.      | `--max_tokens 100`                                   |
-| `-t`, `--temperature`        | Adjust the randomness of the response.          | `--temperature 0.7`                                  |
-| `-tp`, `--top_p`             | Set nucleus sampling threshold.                 | `--top_p 0.9`                                        |
-| `-tk`, `--top_k`             | Number of top tokens to consider for filtering. | `--top_k 40`                                         |
-| `-pp`, `--presence_penalty`  | Penalize new tokens based on their presence.    | `--presence_penalty 0.5`                             |
-| `-fp`, `--frequency_penalty` | Penalize new tokens based on their frequency.   | `--frequency_penalty 0.5`                            |
-
-### Wrapper Options
-| Option(s)           | Description                                     | Example Usage                                      |
-|---------------------|-------------------------------------------------|----------------------------------------------------|
-| `api_key`           | Your Perplexity API key.                        | `api_key="your_api_key"`                           |
-| `query`             | Your query for the online search model.         | `query="enter your search here"`                   |
-| `model`             | Select the model for your session.              | `model="sonar-medium-online"`                      |
-| `stream`            | Enable streaming responses.                     | `stream=True`                                      |
-| `system_prompt`     | Set an initial system prompt.                   | `system_prompt="you are an advanced ai assistant"` |
-| `max_tokens`        | Set the maximum number of response tokens.      | `max_tokens=100`                                   |
-| `temperature`       | Adjust the randomness of the response.          | `temperature=0.7`                                  |
-| `top_p`             | Set nucleus sampling threshold.                 | `top_p=0.9`                                        |
-| `top_k`             | Number of top tokens to consider for filtering. | `top_k=40`                                         |
-| `presence_penalty`  | Penalize new tokens based on their presence.    | `presence_penalty=0.5`                             |
-| `frequency_penalty` | Penalize new tokens based on their frequency.   | `frequency_penalty=0.5`                            |
 
 ## Advanced Usage
 
