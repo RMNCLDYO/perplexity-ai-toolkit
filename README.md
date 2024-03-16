@@ -32,16 +32,17 @@ A Python Wrapper and Command-Line Interface (CLI) for Perplexity AI, designed to
 The tool was crafted to support both individuals seeking direct access to AI-powered chat and search capabilities through the command line and developers looking to integrate AI functionalities into their applications. Whether you're executing web searches or engaging in conversations with AI, this tool streamlines the process, making advanced AI accessible to everyone.
 
 ## Features
-
-- **Command-Line Interface (CLI)**: Search online (in real-time) or engage in conversational chats (similar to ChatGPT) directly from the terminal.
-- **Python Wrapper**: Enables seamless interaction with the full suite of AI models offered by Perplexity Labs using just two lines of code.
-- **Diverse Model Selection**: Choose from an extensive range of models including `mixtral-8x7b-instruct`, `sonar-medium-online`, `mistral-7b-instruct`, `sonar-medium-chat`, `codellama-70b-instruct`, `sonar-small-online`, and `sonar-small-chat` optimized for specific tasks like conversation and web search, ensuring the right fit for every project.
-- **Customizable AI Experience**: Tailor AI behavior to your exact needs with adjustable settings for model choice, response style, output length, and more, granting unparalleled access and control to a variety of large language models.
+- **Search Functionality**: Search online (in real-time) with the help of AI.
+- **Chat Functionality**: Engage in interactive conversations with Perplexity's advanced conversational models.
+- **Command-Line Interface (CLI)**: Access the full suite of functionalities directly from the command line.
+- **Python Wrapper**: Simplify interaction with a variety of models in only 2 lines of code.
+- **Streamed Responses**: Receive responses as they are generated for real-time interaction.
+- **Flexible Configuration**: Customize the token limits, system prompt, temperature, frequency penalty, and more.
+- **Minimal Dependencies**: Built to be efficient and lightweight, requiring only the `requests` package for operation.
 
 ## Prerequisites
-
-- Python 3.x
-- A Perplexity AI account and API key.
+- `Python 3.x`
+- An API key from Perplexity AI
 
 ## Dependencies
 The following Python packages are required:
@@ -51,46 +52,40 @@ The following Python packages are optional:
 - `python-dotenv`: For managing API keys and other environment variables.
 
 ## Installation
+To use the Perplexity API Wrapper and CLI, clone the repository to your local machine and install the required Python packages.
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI.git
-    cd Perplexity-AI-Wrapper-and-CLI
-    ```
+Clone the repository:
+```bash
+git clone https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI.git
+```
 
-2. Install the dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+Navigate to the repositories folder:
+```bash
+cd Perplexity-AI-Wrapper-and-CLI
+```
 
-## Getting Started
+Install the required dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-### Obtaining an API Key
-
-> [!IMPORTANT]  
-> In order to generate an API key, you must first add your payment information to your Perplexity account. API keys can only be generated when your balance is nonzero.
-
-1. Sign up for an account at [Perplexity AI](https://perplexity.ai).
-2. Add your payment information to your Perplexity account.
-3. Navigate to `</> API` in your account settings or access its directly [here](https://www.perplexity.ai/pplx-api).
-4. Click `+ Generate` to create your API Key.
-5. Copy your API key and store it somewhere safe.
-
-### Configuration (*Optional*)
-
-> [!WARNING]  
-> If you choose not to add your API key to an `.env` file, then you must pass your API key to the wrapper or CLI when running the script.
-
-1. Once you have your API key, you can create a new file named `.env` in the root directory (main folder) of this project, or rename the `example.env` file in the root directory of this project to `.env`.
-2. You can then add your API key to the `.env` file as follows:
-   ```
-   API_KEY=your_api_key_here
-   ```
-3. The program will automatically load and use your API key whenever you use this tool.
-
+## Configuration
+1. Obtain an API key from [Perplexity](https://perplexity.ai).
+2. You have two options for managing your API key:
+   - **Using a .env File (Recommended for Development):**
+       - Install python-dotenv if you haven't already: `pip install python-dotenv`.
+       - Create a .env file in the project's root directory.
+       - Add your API key to the .env file like so:
+         ```makefile
+         API_KEY=your_api_key
+         ```
+         This method allows the API key to be loaded automatically when using the wrapper or CLI, assuming you have python-dotenv installed and set up correctly.
+   - **Direct Input:**
+     If you prefer not to use a `.env` file, you can directly pass your API key as an argument to the CLI or the wrapper functions. This method requires manually inputting your API key each time you initiate an API call, ensuring flexibility for different deployment environments.
+     
 ## General Usage
 
-### CLI Tool
+### CLI
 
 #### Online Search Session
 ```bash
@@ -102,21 +97,7 @@ python pplx_cli.py search --query "What is today's date?"
 python pplx_cli.py chat
 ```
 
-#### Help
-```bash
-# General Help
-python pplx_cli.py --help
-```
-```bash
-# Search Help
-python pplx_cli.py search --help
-```
-```bash
-# Chat Help
-python pplx_cli.py chat --help
-```
-
-### Python Wrapper
+### Wrapper
 
 #### Online Search Session
 ```python
@@ -173,38 +154,11 @@ This section provides a comprehensive overview of each configuration option avai
 | `presence_penalty`  | Penalize new tokens based on their presence.    | `presence_penalty=0.5`                             |
 | `frequency_penalty` | Penalize new tokens based on their frequency.   | `frequency_penalty=0.5`                            |
 
-### Usage Details
-| **Option(s)**       	| **Type** 	| **Details**                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|----------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| `chat`              	|          	| Initiates a chat session with the specified model. *(CLI ONLY)*                                                                                                                                                                                                                                                                                                        	|
-| `search`            	|          	| Begins a web search session using the provided query string. *(CLI ONLY)*                                                                                                                                                                                                                                                                                              	|
-| `api_key`           	| *str*   	| Required for authenticating API requests. Your unique API key can be obtained from your Perplexity account.                                                                                                                                                                                                                                                            	|
-| `query`             	| *str*   	| Specifies the search query for web search sessions. Only applicable with the `--search` flag.                                                                                                                                                                                                                                                                          	|
-| `model`             	| *str*   	| The name of the model that will complete your prompt. Options include `sonar-small-chat`, `sonar-small-online`, `sonar-medium-chat`, `sonar-medium-online`, `codellama-70b-instruct`, `mistral-7b-instruct`, `mixtral-8x7b-instruct`.          	                                                                                                                    |
-| `stream`            	| *bool*  	| Determines whether or not to incrementally stream the response.                                                                                                                                                                                                                                                                                                        	|
-| `system_prompt`     	| *str*   	| The initial system prompt. The system prompt explicitly sets the instructions for the model.                                                                                                                                                                                                                                                                           	|
-| `max_tokens`        	| *int*  	| The maximum number of completion tokens returned by the API. The total number of tokens requested in max_tokens plus the number of prompt tokens sent in messages must not exceed the context window token limit of model requested. If left unspecified, then the model will generate tokens until either it reaches its stop token or the end of its context window. 	|
-| `temperature`       	| *num*   	| The amount of randomness in the response, valued between 0 inclusive and 2 exclusive. Higher values are more random, and lower values are more deterministic.                                                                                                                                                                                                          	|
-| `top_p`             	| *num*   	| The nucleus sampling threshold, valued between 0 and 1 inclusive. For each subsequent token, the model considers the results of the tokens with `top_p` probability mass. We recommend either altering `top_k` or `top_p`, but not both.                                                                                                                                     	|
-| `top_k`             	| *num*   	| The number of tokens to keep for highest `top-k` filtering, specified as an integer between 0 and 2048 inclusive. If set to 0, `top-k` filtering is disabled. We recommend either altering `top_k` or `top_p`, but not both.                                                                                                                                                   	|
-| `presence_penalty`  	| *num*   	| A value between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics. Incompatible with `frequency_penalty`.                                                                                                                                                  	|
-| `frequency_penalty` 	| *num*   	| A multiplicative penalty greater than 0. Values greater than 1.0 penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim. A value of 1.0 means no penalty. Incompatible with `presence_penalty`.                                                                                  	|
-
 ## Advanced Usage
 
-### CLI Tool
+### CLI
 
-#### Online Search Session *with Advanced Settings*
-```bash
-python pplx_cli.py search --api_key "YOUR_API_KEY_HERE" --query "What is today's date?" --stream
-```
-
-#### Chat Session *with Advanced Settings*
-```bash
-python pplx_cli.py chat --api_key "YOUR_API_KEY_HERE" --model "sonar-medium-chat" --system_prompt "You are a comedian. All of your responses should be funny." --stream
-```
-
-#### Help
+##### *Help*
 ```bash
 # General Help
 python pplx_cli.py --help
@@ -218,7 +172,17 @@ python pplx_cli.py search --help
 python pplx_cli.py chat --help
 ```
 
-### Python Wrapper
+#### Online Search Session *with Advanced Settings*
+```bash
+python pplx_cli.py search --api_key "YOUR_API_KEY_HERE" --query "What is today's date?" --stream
+```
+
+#### Chat Session *with Advanced Settings*
+```bash
+python pplx_cli.py chat --api_key "YOUR_API_KEY_HERE" --model "sonar-medium-chat" --system_prompt "You are a comedian. All of your responses should be funny." --stream
+```
+
+### Wrapper
 
 #### Online Search Session *with Advanced Settings*
 ```python
@@ -239,52 +203,27 @@ ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="mixtral-8x7b-instruct", syste
 
 ### Perplexity Models
 
-| **Model**           	| **Parameter Count** 	| **Context Length *(max_tokens)*** 	| **Model Type**  	|
-|---------------------	|---------------------	|-----------------------------------	|-----------------	|
-| sonar-small-chat    	| 7B                  	| 16384                             	| Chat Completion 	|
-| sonar-small-online  	| 7B                  	| 12000                             	| Chat Completion 	|
-| sonar-medium-chat   	| 8x7B                	| 16384                             	| Chat Completion 	|
-| sonar-medium-online 	| 8x7B                	| 12000                             	| Chat Completion 	|
+| **Model**             | **Parameter Count** | **Context Length *(max_tokens)*** |
+|-----------------------|---------------------|-----------------------------------|
+| `sonar-small-chat`    | 7B                  | 16384                             |
+| `sonar-small-online`  | 7B                  | 12000                             |
+| `sonar-medium-chat`   | 8x7B                | 16384                             |
+| `sonar-medium-online` | 8x7B                | 12000                             |
 
 ### Open-Source Models
 
 Where possible, Perplexity tries to match the Hugging Face implementation.
 
-| **Model**               	| **Parameter Count** 	| **Context Length *(max_tokens)*** 	| **Model Type**  	|
-|-------------------------	|---------------------	|-----------------------------------	|-----------------	|
-| codellama-70b-instruct  	| 70B                 	| 16384                             	| Chat Completion 	|
-| mistral-7b-instruct [1] 	| 7B                  	| 16384                             	| Chat Completion 	|
-| mixtral-8x7b-instruct   	| 8x7B                	| 16384                             	| Chat Completion 	|
+| **Model**                 | **Parameter Count** | **Context Length *(max_tokens)*** |
+|---------------------------|---------------------|-----------------------------------|
+| `codellama-70b-instruct`  | 70B                 | 16384                             |
+| `mistral-7b-instruct` [1] | 7B                  | 16384                             |
+| `mixtral-8x7b-instruct`   | 8x7B                | 16384                             |
 
 > [1] This model refers to the v0.2 release of `mistral-7b-instruct`.
 
 ### Online LLMs
 It is recommended to use only single-turn conversations and avoid system prompts for the online LLMs (`sonar-small-online` and `sonar-medium-online`).
-
-**Last updated February 25, 2024*
-
-## API Rate Limits
-
-Perplexity limits usage for model if a user's request rate or token usage rate exceeds any of the limits for that model.
-
-### Perplexity Models
-
-| **Model**             	| **Request Rate Limit**                    	| **Token Rate Limit**                	|
-|-----------------------	|-------------------------------------------	|-------------------------------------	|
-| `sonar-small-chat`    	| - 8/5seconds<br>- 24/minute<br>- 240/hour 	| - 16000/minute<br>- 64000/10minutes 	|
-| `sonar-small-online`  	| - 20/minute                               	| N/A                                 	|
-| `sonar-medium-chat`   	| - 8/5seconds<br>- 24/minute<br>- 240/hour 	| - 16000/minute<br>- 64000/10minutes 	|
-| `sonar-medium-online` 	| - 20/minute                               	| N/A                                 	|
-
-### Open-Source Models
-
-| **Model**                	| **Request Rate Limit**                       	| **Token Rate Limit**                                       	|
-|--------------------------	|----------------------------------------------	|------------------------------------------------------------	|
-| `mistral-7b-instruct`    	| - 20/5seconds<br>- 100/minute<br>- 1000/hour 	| - 16000/10seconds<br>- 160000/minute<br>- 512000/10minutes 	|
-| `mixtral-8x7b-instruct`  	| - 8/5seconds<br>- 24/minute<br>- 240/hour    	| - 16000/minute<br>- 64000/10minutes                        	|
-| `codellama-70b-instruct` 	| - 20/5seconds<br>- 60/minute<br>- 600/hour   	| - 40000/minute<br>- 160000/10minutes                       	|
-
-**Last updated February 25, 2024*
 
 ## Contributing
 Contributions are welcome!
