@@ -152,20 +152,6 @@ python pplx_cli.py search --api_key "YOUR_API_KEY_HERE" --query "What is today's
 python pplx_cli.py chat --api_key "YOUR_API_KEY_HERE" --model "sonar-medium-chat" --system_prompt "You are a comedian. All of your responses should be funny." --stream
 ```
 
-#### Help
-```bash
-# General Help
-python pplx_cli.py --help
-```
-```bash
-# Search Help
-python pplx_cli.py search --help
-```
-```bash
-# Chat Help
-python pplx_cli.py chat --help
-```
-
 ### Wrapper
 
 #### Online Search Session *with Advanced Settings*
@@ -181,6 +167,20 @@ SearchAPI().search(api_key="YOUR_API_KEY_HERE", query="What is today's date?", s
 from pplx_chat import ChatAPI
 
 ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="mixtral-8x7b-instruct", system_prompt="You are a comedian. All of your responses should be funny.", stream=True)
+```
+
+### Help
+```bash
+# General Help
+python pplx_cli.py --help
+```
+```bash
+# Search Help
+python pplx_cli.py search --help
+```
+```bash
+# Chat Help
+python pplx_cli.py chat --help
 ```
 
 ## Available Models
