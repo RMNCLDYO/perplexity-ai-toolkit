@@ -6,7 +6,7 @@
 
 <p align="center">
     <a href=".github/CHANGELOG.md" title="Go to changelog" target="_blank">
-        <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=Perplexity+AI+Wrapper+and+CLI&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FRMNCLDYO%2FPerplexity-AI-Wrapper-and-CLI%2Fmain%2F.github%2Fversion.json" alt="Version">
+        <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=Perplexity+AI+Toolkit&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FRMNCLDYO%2Fperplexity-ai-toolkit%2Fmain%2F.github%2Fversion.json" alt="Version">
     </a>
 </p>
 
@@ -18,9 +18,9 @@
 <p align="center">
     <a href="/">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/pplx-logo-dark.png">
-          <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/pplx-logo-light.png">
-          <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." width="500" src="https://raw.githubusercontent.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/main/.github/pplx-logo-light.png">
+          <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RMNCLDYO/perplexity-ai-toolkit/main/.github/pplx-logo-dark.png">
+          <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RMNCLDYO/perplexity-ai-toolkit/main/.github/pplx-logo-light.png">
+          <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." width="500" src="https://raw.githubusercontent.com/RMNCLDYO/perplexity-ai-toolkit/main/.github/pplx-logo-light.png">
         </picture>
     </a>
 </p>
@@ -60,16 +60,16 @@ The following Python packages are optional:
 - `python-dotenv`: For managing API keys and other environment variables.
 
 ## Installation
-To use the Perplexity API Wrapper and CLI, clone the repository to your local machine and install the required Python packages.
+To use the Perplexity AI Toolkit, clone the repository to your local machine and install the required Python packages.
 
 Clone the repository:
 ```bash
-git clone https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI.git
+git clone https://github.com/RMNCLDYO/perplexity-ai-toolkit.git
 ```
 
 Navigate to the repositories folder:
 ```bash
-cd Perplexity-AI-Wrapper-and-CLI
+cd perplexity-ai-toolkit
 ```
 
 Install the required dependencies:
@@ -227,7 +227,7 @@ Encountered a bug? We'd love to hear about it. Please follow these steps to repo
 
 1. Check if the issue has already been reported.
 2. Use the [Bug Report](.github/ISSUE_TEMPLATE/bug_report.md) template to create a detailed report.
-3. Submit the report [here](https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/issues).
+3. Submit the report [here](https://github.com/RMNCLDYO/perplexity-ai-toolkit/issues).
 
 Your report will help us make the project better for everyone.
 
@@ -236,7 +236,7 @@ Got an idea for a new feature? Feel free to suggest it. Here's how:
 
 1. Check if the feature has already been suggested or implemented.
 2. Use the [Feature Request](.github/ISSUE_TEMPLATE/feature_request.md) template to create a detailed request.
-3. Submit the request [here](https://github.com/RMNCLDYO/Perplexity-AI-Wrapper-and-CLI/issues).
+3. Submit the request [here](https://github.com/RMNCLDYO/perplexity-ai-toolkit/issues).
 
 Your suggestions for improvements are always welcome.
 
