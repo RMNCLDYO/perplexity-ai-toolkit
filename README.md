@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-    <a href=".github/version.json" title="Go to changelog" target="_blank">
+    <a href=".github/CHANGELOG.md" title="Go to changelog" target="_blank">
         <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=Perplexity+AI+Wrapper+and+CLI&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FRMNCLDYO%2FPerplexity-AI-Wrapper-and-CLI%2Fmain%2F.github%2Fversion.json" alt="Version">
     </a>
 </p>
@@ -39,6 +39,14 @@ The tool was crafted to support both individuals seeking direct access to AI-pow
 - **Streamed Responses**: Receive responses as they are generated for real-time interaction.
 - **Flexible Configuration**: Customize the token limits, system prompt, temperature, frequency penalty, and more.
 - **Minimal Dependencies**: Built to be efficient and lightweight, requiring only the `requests` package for operation.
+
+## Announcement
+> [!NOTE]
+> *v1.2.0* is scheduled for release on *(03/22/24)* \
+\
+This version introduces a modular architecture, streamlined API client, enhanced CLI options, and improved configuration management. \
+\
+Stay tuned for further announcements and detailed release notes.
 
 ## Prerequisites
 - `Python 3.x`
