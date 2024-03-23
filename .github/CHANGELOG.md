@@ -4,6 +4,28 @@ All notable changes to the project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2024-03-23
+
+### Added
+- config.py: Introduced a configuration management system to load environment variables and default settings.
+- client.py: Implemented a new client architecture for making API requests, including streaming support.
+
+### Improved
+- loading.py: No changes detected in functionality, the code remains identical.
+- perplexity.py: Enhanced with a modular approach separating chat and search functionalities into distinct classes with improved error handling.
+- cli.py: Major overhaul to CLI interface, incorporating new options and better help documentation, facilitating both chat and search operations with the new client architecture.
+
+### Changed
+- Environment variable management has been centralized and now requires specific keys (`PERPLEXITY_API_KEY`, `PERPLEXITY_DEFAULT_CHAT_MODEL`, `PERPLEXITY_DEFAULT_SEARCH_MODEL`, `PERPLEXITY_BASE_URL`, `PERPLEXITY_TIMEOUT`), but has defaults already set for ease of use.
+- The base API interaction logic has been encapsulated within the Client class, abstracting the complexities of request handling, including streaming.
+
+### Removed
+- `pplx.py`, `pplx_cli.py`, `base_api.py`, `pplx_search.py`, and `pplx_chat.py` have been replaced with the new `client.py`, `config.py`, `perplexity.py`, and `cli.py` files, indicating a structural overhaul.
+- The direct dependency on .env file loading within API wrapper files has been removed, now managed centrally in `config.py`.
+
+### Fixed
+- The handling of API keys and configuration settings has been standardized, fixing inconsistencies in how environment variables were previously managed.
+
 ## [1.1.2] - 02/25/2024
 
 `base_api.py`
