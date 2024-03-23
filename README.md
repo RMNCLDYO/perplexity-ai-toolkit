@@ -42,7 +42,7 @@ The tool was crafted to support both individuals seeking direct access to AI-pow
 
 ## Announcement
 > [!NOTE]
-> *v1.2.0* is scheduled for release on *(03/22/24)* \
+> *v1.2.0* is scheduled for release on *(03/23/24)* \
 \
 This version introduces a modular architecture, streamlined API client, enhanced CLI options, and improved configuration management. \
 \
@@ -144,7 +144,6 @@ ChatAPI().chat()
 | Top-k sampling threshold                   | `-tk`, `--top_k`             | --top_k 40                                         | top_k=40                                         |
 | Penalize tokens based on their presence    | `-pp`, `--presence_penalty`  | --presence_penalty 0.5                             | presence_penalty=0.5                             |
 | Penalize tokens based on their frequency   | `-fp`, `--frequency_penalty` | --frequency_penalty 0.5                            | frequency_penalty=0.5                            |
-
 
 ## Advanced Usage
 
