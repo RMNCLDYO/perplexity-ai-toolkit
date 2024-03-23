@@ -1,3 +1,3 @@
-from pplx_search import SearchAPI
+from perplexity import Search
 
-SearchAPI().search(query="What is today's date?")
+Search().run(query="What is todays date?")
