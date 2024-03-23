@@ -164,21 +164,21 @@ Chat().run(stream=True)
 ## Advanced Configuration
 
 ### CLI and Wrapper Options
-| **Description**                          | **CLI Flag(s)**              | **CLI Usage**                                      | **Wrapper Usage**                                |
-|------------------------------------------|------------------------------|----------------------------------------------------|--------------------------------------------------|
-| Enable chat mode                         | `-c`, `--chat`               | --chat                                             | *See mode usage above*                           |
-| Enable online search mode                | `-s`, `--search`             | --search                                           | *See mode usage above*                           |
-| API key for authentication               | `-a`,  `--api_key`           | --api_key your_api_key                             | api_key="your_api_key"                           |
-| Search Query                             | `-q`,  `--query`             | --query "enter your search here"                   | query="enter your search here"                   |
-| Model to use                             | `-m`,  `--model`             | --model "sonar-medium-chat"                        | model="sonar-medium-online"                      |
-| Enable streaming mode                    | `-st`, `--stream`            | --stream                                           | stream=True                                      |
-| Set an initial system prompt.            | `-sp`, `--system_prompt`     | --system_prompt "you are an advanced ai assistant" | system_prompt="you are an advanced ai assistant" |
-| Maximum tokens to generate               | `-mt`, `--max_tokens`        | --max_tokens 100                                   | max_tokens=100                                   |
-| Sampling temperature                     | `-tm`,  `--temperature`      | --temperature 0.7                                  | temperature=0.7                                  |
-| Nucleus sampling threshold               | `-tp`, `--top_p`             | --top_p 0.9                                        | top_p=0.9                                        |
-| Top-k sampling threshold                 | `-tk`, `--top_k`             | --top_k 40                                         | top_k=40                                         |
-| Penalize tokens based on their presence  | `-pp`, `--presence_penalty`  | --presence_penalty 0.5                             | presence_penalty=0.5                             |
-| Penalize tokens based on their frequency | `-fp`, `--frequency_penalty` | --frequency_penalty 0.5                            | frequency_penalty=0.5                            |
+| **Description**                          | **CLI Flag(s)**              | **CLI Usage**                                       | **Wrapper Usage**                                 |
+|------------------------------------------|------------------------------|-----------------------------------------------------|---------------------------------------------------|
+| Enable chat mode                         | `-c`,  `--chat`              | --chat                                              | *See mode usage above*                            |
+| Enable online search mode                | `-s`,  `--search`            | --search                                            | *See mode usage above*                            |
+| API key for authentication               | `-a`,  `--api_key`           | --api_key your_api_key                              | api_key="your_api_key"                            |
+| Search query                             | `-q`,  `--query`             | --query "What is today's date?"                     | query="What is today's date?"                     |
+| Model to use                             | `-m`,  `--model`             | --model "sonar-medium-chat"                         | model="sonar-medium-online"                       |
+| Enable streaming mode                    | `-st`, `--stream`            | --stream                                            | stream=True                                       |
+| Set an initial system prompt.            | `-sp`, `--system_prompt`     | --system_prompt "You are an advanced ai assistant." | system_prompt="You are an advanced ai assistant." |
+| Maximum tokens to generate               | `-mt`, `--max_tokens`        | --max_tokens 100                                    | max_tokens=100                                    |
+| Sampling temperature                     | `-tm`, `--temperature`       | --temperature 0.7                                   | temperature=0.7                                   |
+| Nucleus sampling threshold               | `-tp`, `--top_p`             | --top_p 0.9                                         | top_p=0.9                                         |
+| Top-k sampling threshold                 | `-tk`, `--top_k`             | --top_k 40                                          | top_k=40                                          |
+| Penalize tokens based on their presence  | `-pp`, `--presence_penalty`  | --presence_penalty 0.5                              | presence_penalty=0.5                              |
+| Penalize tokens based on their frequency | `-fp`, `--frequency_penalty` | --frequency_penalty 0.5                             | frequency_penalty=0.5                             |
 
 ## Available Models
 
