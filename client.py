@@ -45,7 +45,6 @@ class Client:
     def stream_post(self, endpoint, data):
         loading = Loading()
         url = f"{self.base_url}/{endpoint}"
-        self.headers["content-type"] = "text/event-stream"
         full_response = []
         try:
             loading.start()
