@@ -1,3 +1,3 @@
-from pplx_chat import ChatAPI
+from perplexity import Chat
 
-ChatAPI().chat()
+Chat().run()
