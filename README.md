@@ -68,7 +68,7 @@ pip install -r requirements.txt
 ```
 
 ## Configuration
-1. Obtain an API key from <a href="https://www.perplexity.ai/" title="Go to Perplexity homepage" target="_blank" rel="noopener noreferrer">Perplexity</a>
+1. Obtain an API key from [Perplexity](https://www.perplexity.ai/).
 2. You have three options for managing your API key:
    <details>
    <summary>Click here to view the API key configuration options</summary>
