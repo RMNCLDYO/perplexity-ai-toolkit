@@ -1,18 +1,18 @@
 <p align="center">
-    <a href="https://www.perplexity.ai/" title="Go to Perplexity homepage" target="_blank">
+    <a href="https://www.perplexity.ai/" title="Go to Perplexity homepage" target="_blank" rel="noopener noreferrer">
         <img src="https://img.shields.io/badge/PERPLEXITY%20AI-20808d?style=for-the-badge&logo=data:image/png;base64,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" alt="Perplexity AI">
     </a>
 </p>
 
 <p align="center">
-    <a href=".github/CHANGELOG.md" title="Go to changelog" target="_blank">
+    <a href=".github/CHANGELOG.md" title="Go to changelog" target="_blank" rel="noopener noreferrer">
         <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=Perplexity+AI+Toolkit&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FRMNCLDYO%2Fperplexity-ai-toolkit%2Fmain%2F.github%2Fversion.json" alt="Version">
     </a>
 </p>
 
 <p align="center">
-    <a href=".github/CHANGELOG.md" title="Go to changelog" target="_blank"><img src="https://img.shields.io/badge/maintained-yes-2ea44f?style=for-the-badge" alt="maintained - yes"></a>
-    <a href=".github/CONTRIBUTING.md" title="Go to contributions doc" target="_blank"><img src="https://img.shields.io/badge/contributions-welcome-2ea44f?style=for-the-badge" alt="contributions - welcome"></a>
+    <a href=".github/CHANGELOG.md" title="Go to changelog" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/maintained-yes-2ea44f?style=for-the-badge" alt="maintained - yes"></a>
+    <a href=".github/CONTRIBUTING.md" title="Go to contributions doc" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/contributions-welcome-2ea44f?style=for-the-badge" alt="contributions - welcome"></a>
 </p>
 
 <p align="center">
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 ```
 
 ## Configuration
-1. Obtain an API key from [Perplexity](https://perplexity.ai).
+1. Obtain an API key from <a href="https://www.perplexity.ai/" title="Go to Perplexity homepage" target="_blank" rel="noopener noreferrer">Perplexity</a>
 2. You have three options for managing your API key:
    <details>
    <summary>Click here to view the API key configuration options</summary>
