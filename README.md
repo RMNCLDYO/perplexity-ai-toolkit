@@ -152,11 +152,11 @@ Search().run(query="What is today's date?")
 |------------------------------------------|------------------------------|-----------------------------------------------------|---------------------------------------------------|
 | Enable chat mode                         | `-c`,  `--chat`              | --chat                                              | *See mode usage above*                            |
 | Enable online search mode                | `-s`,  `--search`            | --search                                            | *See mode usage above*                            |
+| Online search query                      | `-q`,  `--query`             | --query "What is today's date?"                     | query="What is today's date?"                     |
 | Initial chat prompt                      | `-p`,  `--prompt`            | --prompt "How are you doing today my ai friend?"    | prompt="How are you doing today my ai friend?"    |
-| Search query                             | `-q`,  `--query`             | --query "What is today's date?"                     | query="What is today's date?"                     |
 | API key for authentication               | `-a`,  `--api_key`           | --api_key your_api_key                              | api_key="your_api_key"                            |
-| Model to use                             | `-m`,  `--model`             | --model "sonar-medium-chat"                         | model="sonar-medium-online"                       |
-| Set an initial system prompt.            | `-sp`, `--system_prompt`     | --system_prompt "You are an advanced ai assistant." | system_prompt="You are an advanced ai assistant." |
+| Language model to use                    | `-m`,  `--model`             | --model "sonar-medium-chat"                         | model="sonar-medium-online"                       |
+| Initial system prompt                    | `-sp`, `--system_prompt`     | --system_prompt "You are an advanced ai assistant." | system_prompt="You are an advanced ai assistant." |
 | Enable streaming mode                    | `-st`, `--stream`            | --stream                                            | stream=True                                       |
 | Maximum tokens to generate               | `-mt`, `--max_tokens`        | --max_tokens 100                                    | max_tokens=100                                    |
 | Sampling temperature                     | `-tm`, `--temperature`       | --temperature 0.7                                   | temperature=0.7                                   |
