@@ -70,6 +70,9 @@ pip install -r requirements.txt
 ## Configuration
 1. Obtain an API key from [Perplexity](https://perplexity.ai).
 2. You have three options for managing your API key:
+   <details>
+   <summary>Click here to view the API key configuration options</summary>
+   
    - **Setting it as an environment variable on your device (recommended for everyday use)**
        - Navigate to your terminal.
        - Add your API key like so:
@@ -99,7 +102,7 @@ pip install -r requirements.txt
          api_key="your_api_key"
          ```
        This method requires manually inputting your API key each time you initiate an API call, ensuring flexibility for different deployment environments.
-     
+   </details>
 ## Usage
 The Perplexity AI Toolkit can be used in three different modes: `Chat`, and `Search`. Each mode is designed for specific types of interactions with the language models.
 
