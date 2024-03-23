@@ -27,9 +27,7 @@
 
 ## Overview
 
-A Python Wrapper and Command-Line Interface (CLI) for Perplexity AI, designed to facilitate seamless interaction with the full suite of language models offered by Perplexity Labs. 
-
-The tool was crafted to support both individuals seeking direct access to AI-powered chat and search capabilities through the command line and developers looking to integrate AI functionalities into their applications. Whether you're executing web searches or engaging in conversations with AI, this tool streamlines the process, making advanced AI accessible to everyone.
+The Perplexity AI Toolkit makes it easy to use Perplexity Labs' 'Sonar' language models and a suit of open-source models like `Mistral`, `Mixtral`, and `Code Llama` for creating chatbots, generating text, and searching the web (in real-time). It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
 
 ## Features
 - **Search Functionality**: Search online (in real-time) with the help of AI.
@@ -39,14 +37,6 @@ The tool was crafted to support both individuals seeking direct access to AI-pow
 - **Streamed Responses**: Receive responses as they are generated for real-time interaction.
 - **Flexible Configuration**: Customize the token limits, system prompt, temperature, frequency penalty, and more.
 - **Minimal Dependencies**: Built to be efficient and lightweight, requiring only the `requests` package for operation.
-
-## Announcement
-> [!NOTE]
-> *v1.2.0* is scheduled for release on *(03/23/24)* \
-\
-This version introduces a modular architecture, streamlined API client, enhanced CLI options, and improved configuration management. \
-\
-Stay tuned for further announcements and detailed release notes.
 
 ## Prerequisites
 - `Python 3.x`
@@ -79,116 +69,113 @@ pip install -r requirements.txt
 
 ## Configuration
 1. Obtain an API key from [Perplexity](https://perplexity.ai).
-2. You have two options for managing your API key:
-   - **Using a .env File (Recommended for Development):**
+2. You have three options for managing your API key:
+   - **Setting it as an environment variable on your device (recommended for everyday use)**
+       - Navigate to your terminal.
+       - Add your API key like so:
+         ```shell
+         export PERPLEXITY_API_KEY=your_api_key
+         ```
+       This method allows the API key to be loaded automatically when using the wrapper or CLI.
+     
+   - **Using an .env file (recommended for development):**
        - Install python-dotenv if you haven't already: `pip install python-dotenv`.
        - Create a .env file in the project's root directory.
        - Add your API key to the .env file like so:
          ```makefile
-         API_KEY=your_api_key
+         PERPLEXITY_API_KEY=your_api_key
          ```
-         This method allows the API key to be loaded automatically when using the wrapper or CLI, assuming you have python-dotenv installed and set up correctly.
-   - **Direct Input:**
-     If you prefer not to use a `.env` file, you can directly pass your API key as an argument to the CLI or the wrapper functions. This method requires manually inputting your API key each time you initiate an API call, ensuring flexibility for different deployment environments.
+       This method allows the API key to be loaded automatically when using the wrapper or CLI, assuming you have python-dotenv installed and set up correctly.
      
-## General Usage
+   - **Direct Input:**
+       - If you prefer not to use a `.env` file, you can directly pass your API key as an argument to the CLI or the wrapper functions.
+         
+         ***CLI***
+         ```shell
+         --api_key your_api_key
+         ```
+         ***Wrapper***
+         ```shell
+         api_key="your_api_key"
+         ```
+       This method requires manually inputting your API key each time you initiate an API call, ensuring flexibility for different deployment environments.
+     
+## Usage
+The Perplexity AI Toolkit can be used in three different modes: `Chat`, and `Search`. Each mode is designed for specific types of interactions with the language models.
 
-### CLI
+### Chat Mode
+Chat mode is intended for chatting with an AI model (similar to a chatbot) or building conversational applications. It supports multi-turn dialogues with the model.
 
-#### Online Search Session
+#### Example Usage
+
+***CLI***
 ```bash
-python pplx_cli.py search --query "What is today's date?"
+python cli.py --chat
 ```
 
-#### Chat Session
-```bash
-python pplx_cli.py chat
-```
-
-### Wrapper
-
-#### Online Search Session
+***Wrapper***
 ```python
-from pplx_search import SearchAPI
+from perplexity import Chat
 
-SearchAPI().search(query="What is today's date?")
+Chat().run()
+```
+
+> An executable version of this example can be found [here](./examples/example_chat.py). (*You must move this file to the root folder before running the program.*)
+
+## Search Mode
+Search mode is suitable for generating text and searching the web based on a provided query.
+
+#### Example Usage
+
+***CLI***
+```bash
+python cli.py --search --query "What is today's date?"
+```
+
+***Wrapper***
+```python
+from perplexity import Search
+
+Search().run(query="What is today's date?")
 ```
 
 > An executable version of this example can be found [here](./examples/example_search.py). (*You must move this file to the root folder before running the program.*)
 
-#### Chat Session
+## Stream Mode
+Enable streaming mode to receive responses as they are generated without waiting for the full response.
 
-```python
-from pplx_chat import ChatAPI
+#### Example Usage
 
-ChatAPI().chat()
+***CLI***
+```bash
+python cli.py --chat --stream
 ```
 
-> An executable version of this example can be found [here](./examples/example_chat.py). (*You must move this file to the root folder before running the program.*)
+***Wrapper***
+```python
+from perplexity import Chat
+
+Chat().run(stream=True)
+```
 
 ## Advanced Configuration
 
 ### CLI and Wrapper Options
 | **Description**                            | **CLI Flag(s)**              | **CLI Usage**                                      | **Wrapper Usage**                                |
 |--------------------------------------------|------------------------------|----------------------------------------------------|--------------------------------------------------|
-| Start a conversation with with an ai model | `chat`                       | chat                                               | *See mode usage above*                           |
-| Search the web in real-time                | `search`                     | search                                             | *See mode usage above*                           |
+| Start a conversation with with an ai model | `-c`, `--chat`               | --chat                                             | *See mode usage above*                           |
+| Search the web in real-time                | `-s`, `--search`             | --search                                           | *See mode usage above*                           |
 | API key for authentication                 | `-a`,  `--api_key`           | --api_key your_api_key                             | api_key="your_api_key"                           |
 | Search Query                               | `-q`,  `--query`             | --query "enter your search here"                   | query="enter your search here"                   |
 | Model to use                               | `-m`,  `--model`             | --model "sonar-medium-chat"                        | model="sonar-medium-online"                      |
 | Enable streaming mode                      | `-st`, `--stream`            | --stream                                           | stream=True                                      |
 | Set an initial system prompt.              | `-sp`, `--system_prompt`     | --system_prompt "you are an advanced ai assistant" | system_prompt="you are an advanced ai assistant" |
 | Maximum tokens to generate                 | `-mt`, `--max_tokens`        | --max_tokens 100                                   | max_tokens=100                                   |
-| Sampling temperature                       | `-t`,  `--temperature`       | --temperature 0.7                                  | temperature=0.7                                  |
+| Sampling temperature                       | `-tm`,  `--temperature`      | --temperature 0.7                                  | temperature=0.7                                  |
 | Nucleus sampling threshold                 | `-tp`, `--top_p`             | --top_p 0.9                                        | top_p=0.9                                        |
 | Top-k sampling threshold                   | `-tk`, `--top_k`             | --top_k 40                                         | top_k=40                                         |
 | Penalize tokens based on their presence    | `-pp`, `--presence_penalty`  | --presence_penalty 0.5                             | presence_penalty=0.5                             |
 | Penalize tokens based on their frequency   | `-fp`, `--frequency_penalty` | --frequency_penalty 0.5                            | frequency_penalty=0.5                            |
-
-## Advanced Usage
-
-### CLI
-
-#### Online Search Session *with Advanced Settings*
-```bash
-python pplx_cli.py search --api_key "YOUR_API_KEY_HERE" --query "What is today's date?" --stream
-```
-
-#### Chat Session *with Advanced Settings*
-```bash
-python pplx_cli.py chat --api_key "YOUR_API_KEY_HERE" --model "sonar-medium-chat" --system_prompt "You are a comedian. All of your responses should be funny." --stream
-```
-
-### Wrapper
-
-#### Online Search Session *with Advanced Settings*
-```python
-from pplx_search import SearchAPI
-
-SearchAPI().search(api_key="YOUR_API_KEY_HERE", query="What is today's date?", stream=True)
-```
-
-#### Chat Session *with Advanced Settings*
-
-```python
-from pplx_chat import ChatAPI
-
-ChatAPI().chat(api_key="YOUR_API_KEY_HERE", model="mixtral-8x7b-instruct", system_prompt="You are a comedian. All of your responses should be funny.", stream=True)
-```
-
-### Help
-```bash
-# General Help
-python pplx_cli.py --help
-```
-```bash
-# Search Help
-python pplx_cli.py search --help
-```
-```bash
-# Chat Help
-python pplx_cli.py chat --help
-```
 
 ## Available Models
 
