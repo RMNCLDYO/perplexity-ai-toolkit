@@ -108,7 +108,7 @@ pip install -r requirements.txt
 The Perplexity AI Toolkit can be used in two different modes: `Chat`, and `Search`. Each mode is designed for specific types of interactions with the language models.
 
 ## Chat Mode
-Chat mode is intended for chatting with an AI model (similar to a chatbot) or building conversational applications. It supports multi-turn dialogues with the model.
+Chat mode is intended for chatting with an AI model (similar to a chatbot) or building conversational applications.
 
 #### Example Usage
 
@@ -127,7 +127,7 @@ Chat().run()
 > An executable version of this example can be found [here](./examples/example_chat.py). (*You must move this file to the root folder before running the program.*)
 
 ## Search Mode
-Search mode is suitable for generating text and searching the web based on a provided query.
+Search mode is intended for searching online (in real-time) for a single query as perplexity does not support multi-turn conversations with their online models.
 
 #### Example Usage
 
