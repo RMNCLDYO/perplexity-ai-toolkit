@@ -145,23 +145,6 @@ Search().run(query="What is today's date?")
 
 > An executable version of this example can be found [here](./examples/example_search.py). (*You must move this file to the root folder before running the program.*)
 
-## Stream Mode
-Enable streaming mode to receive responses as they are generated without waiting for the full response.
-
-#### Example Usage
-
-***CLI***
-```bash
-python cli.py --chat --stream
-```
-
-***Wrapper***
-```python
-from perplexity import Chat
-
-Chat().run(stream=True)
-```
-
 ## Advanced Configuration
 
 ### CLI and Wrapper Options
