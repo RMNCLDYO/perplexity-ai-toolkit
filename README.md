@@ -103,10 +103,11 @@ pip install -r requirements.txt
          ```
        This method requires manually inputting your API key each time you initiate an API call, ensuring flexibility for different deployment environments.
    </details>
+
 ## Usage
 The Perplexity AI Toolkit can be used in two different modes: `Chat`, and `Search`. Each mode is designed for specific types of interactions with the language models.
 
-### Chat Mode
+## Chat Mode
 Chat mode is intended for chatting with an AI model (similar to a chatbot) or building conversational applications. It supports multi-turn dialogues with the model.
 
 #### Example Usage
