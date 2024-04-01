@@ -148,7 +148,7 @@ Search().run(query="What is today's date?")
 ## Advanced Configuration
 
 ### CLI and Wrapper Options
-| **Description**                          | **CLI Flag(s)**              | **CLI Usage**                                       | **Wrapper Usage**                                 |
+| **Description**                          | **CLI Flags**                | **CLI Usage**                                       | **Wrapper Usage**                                 |
 |------------------------------------------|------------------------------|-----------------------------------------------------|---------------------------------------------------|
 | Enable chat mode                         | `-c`,  `--chat`              | --chat                                              | *See mode usage above*                            |
 | Enable online search mode                | `-s`,  `--search`            | --search                                            | *See mode usage above*                            |
@@ -169,22 +169,22 @@ Search().run(query="What is today's date?")
 
 ### Perplexity Models
 
-| **Model**             | **Parameter Count** | **Context Length *(max_tokens)*** |
-|-----------------------|---------------------|-----------------------------------|
-| `sonar-small-chat`    | 7B                  | 16384                             |
-| `sonar-small-online`  | 7B                  | 12000                             |
-| `sonar-medium-chat`   | 8x7B                | 16384                             |
-| `sonar-medium-online` | 8x7B                | 12000                             |
+| **Model**             | **Max Tokens** |
+|-----------------------|----------------|
+| `sonar-small-chat`    | 16384          |
+| `sonar-small-online`  | 12000          |
+| `sonar-medium-chat`   | 16384          |
+| `sonar-medium-online` | 12000          |
 
 ### Open-Source Models
 
 Where possible, Perplexity tries to match the Hugging Face implementation.
 
-| **Model**                 | **Parameter Count** | **Context Length *(max_tokens)*** |
-|---------------------------|---------------------|-----------------------------------|
-| `codellama-70b-instruct`  | 70B                 | 16384                             |
-| `mistral-7b-instruct` [1] | 7B                  | 16384                             |
-| `mixtral-8x7b-instruct`   | 8x7B                | 16384                             |
+| **Model**                 | **Max Tokens** |
+|---------------------------|----------------|
+| `codellama-70b-instruct`  | 16384          |
+| `mistral-7b-instruct` [1] | 16384          |
+| `mixtral-8x7b-instruct`   | 16384          |
 
 > [1] This model refers to the v0.2 release of `mistral-7b-instruct`.
 
