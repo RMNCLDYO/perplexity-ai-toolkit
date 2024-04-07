@@ -153,11 +153,11 @@ Search().run(query="What is today's date?")
 | Enable chat mode                         | `-c`,  `--chat`              | --chat                                              | *See mode usage above*                            |
 | Enable online search mode                | `-s`,  `--search`            | --search                                            | *See mode usage above*                            |
 | Online search query                      | `-q`,  `--query`             | --query "What is today's date?"                     | query="What is today's date?"                     |
-| Initial chat prompt                      | `-p`,  `--prompt`            | --prompt "How are you doing today my ai friend?"    | prompt="How are you doing today my ai friend?"    |
+| User prompt                              | `-p`,  `--prompt`            | --prompt "How are you doing today my ai friend?"    | prompt="How are you doing today my ai friend?"    |
 | API key for authentication               | `-a`,  `--api_key`           | --api_key your_api_key                              | api_key="your_api_key"                            |
-| Language model to use                    | `-m`,  `--model`             | --model "sonar-medium-chat"                         | model="sonar-medium-online"                       |
-| Initial system prompt                    | `-sp`, `--system_prompt`     | --system_prompt "You are an advanced ai assistant." | system_prompt="You are an advanced ai assistant." |
+| Model name                               | `-m`,  `--model`             | --model "sonar-medium-chat"                         | model="sonar-medium-online"                       |
 | Enable streaming mode                    | `-st`, `--stream`            | --stream                                            | stream=True                                       |
+| System prompt (instructions)             | `-sp`, `--system_prompt`     | --system_prompt "You are an advanced ai assistant"  | system_prompt="You are an advanced ai assistant"  |
 | Maximum tokens to generate               | `-mt`, `--max_tokens`        | --max_tokens 100                                    | max_tokens=100                                    |
 | Sampling temperature                     | `-tm`, `--temperature`       | --temperature 0.7                                   | temperature=0.7                                   |
 | Nucleus sampling threshold               | `-tp`, `--top_p`             | --top_p 0.9                                         | top_p=0.9                                         |
