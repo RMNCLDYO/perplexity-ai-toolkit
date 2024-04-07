@@ -5,14 +5,14 @@
 </p>
 
 <p align="center">
-    <a href=".github/CHANGELOG.md" title="Go to Changelog">
-        <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=Perplexity+AI+Toolkit&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FRMNCLDYO%2Fperplexity-ai-toolkit%2Fmain%2F.github%2Fversion.json" alt="Version">
+    <a href="https://github.com/RMNCLDYO/perplexity-ai-toolkit" title="Go to repo">
+        <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=Perplexity+AI+Toolkit&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2FRMNCLDYO%2Fperplexity-ai-toolkit%2Fmain%2F.github%2Fversion.json" alt="Perplexity AI Toolkit">
     </a>
 </p>
 
 <p align="center">
-    <a href=".github/CHANGELOG.md" title="Go to Changelog"><img src="https://img.shields.io/badge/maintained-yes-2ea44f?style=for-the-badge" alt="maintained - yes"></a>
-    <a href=".github/CONTRIBUTING.md" title="Go to Contributions"><img src="https://img.shields.io/badge/contributions-welcome-2ea44f?style=for-the-badge" alt="contributions - welcome"></a>
+    <a href=".github/CHANGELOG.md" title="Go to changelog"><img src="https://img.shields.io/badge/maintained-yes-2ea44f?style=for-the-badge" alt="maintained - yes"></a>
+    <a href=".github/CONTRIBUTING.md" title="Go to contributions"><img src="https://img.shields.io/badge/contributions-welcome-2ea44f?style=for-the-badge" alt="contributions - welcome"></a>
 </p>
 
 <p align="center">
@@ -20,16 +20,15 @@
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RMNCLDYO/perplexity-ai-toolkit/main/.github/pplx-logo-dark.png">
           <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RMNCLDYO/perplexity-ai-toolkit/main/.github/pplx-logo-light.png">
-          <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." width="500" src="https://raw.githubusercontent.com/RMNCLDYO/perplexity-ai-toolkit/main/.github/pplx-logo-light.png">
+          <img alt="Perplexity AI" width="500" src="https://raw.githubusercontent.com/RMNCLDYO/perplexity-ai-toolkit/main/.github/pplx-logo-light.png">
         </picture>
     </a>
 </p>
 
 ## Overview
+The Perplexity AI Toolkit makes it easy to use Perplexity Labs' `Sonar` language models and a suit of open-source models like `Mistral`, `Mixtral`, and `CodeLlama` for creating chatbots, generating text, and searching the web (in real-time). It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
 
-The Perplexity AI Toolkit makes it easy to use Perplexity Labs' Sonar language models and a suit of open-source models like `Mistral`, `Mixtral`, and `CodeLlama` for creating chatbots, generating text, and searching the web (in real-time). It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
-
-## Features
+## Key Features
 - **Search Functionality**: Search online (in real-time) with the help of AI.
 - **Chat Functionality**: Engage in interactive conversations with Perplexity's advanced conversational models.
 - **Command-Line Interface (CLI)**: Access the full suite of functionalities directly from the command line.
