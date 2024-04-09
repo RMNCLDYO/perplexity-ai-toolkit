@@ -166,6 +166,8 @@ Search().run(query="What is today's date?")
 
 ## Available Models
 
+Perplexity uniquely offers both native models and a selection of large, open-source models, providing a versatile and efficient way to leverage their API for a wide range of applications with both in-house and extensive community-developed models.
+
 ### Perplexity Models
 
 | **Model**             | **Max Tokens** |
