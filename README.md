@@ -164,6 +164,8 @@ Search().run(query="What is today's date?")
 | Penalize tokens based on their presence  | `-pp`, `--presence_penalty`  | --presence_penalty 0.5                              | presence_penalty=0.5                              |
 | Penalize tokens based on their frequency | `-fp`, `--frequency_penalty` | --frequency_penalty 0.5                             | frequency_penalty=0.5                             |
 
+> *To exit the program at any time, you can type **`exit`** or **`quit`**. This command works similarly whether you're interacting with the program via the CLI or through the Python wrapper ensuring that you can easily and safely conclude your work with the Perplexity AI Toolkit without having to resort to interrupt signals or forcibly closing the terminal or command prompt.*
+
 ## Available Models
 
 Perplexity uniquely offers both native models and a selection of large, open-source models, providing a versatile and efficient way to leverage their API for a wide range of applications with both in-house and extensive community-developed models.
