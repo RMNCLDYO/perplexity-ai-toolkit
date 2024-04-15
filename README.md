@@ -192,7 +192,7 @@ Where possible, Perplexity tries to match the Hugging Face implementation.
 > [1] This model refers to the v0.2 release of `mistral-7b-instruct`.
 
 ### Online LLMs
-It is recommended to use only single-turn conversations and avoid system prompts for the online LLMs (`sonar-small-online` and `sonar-medium-online`).
+Search mode is limited to 'online' models, such as `sonar-small-online` and `sonar-medium-online`. For these online LLMs, Perplexity recommends refraining from using system prompts.
 
 ## Contributing
 Contributions are welcome!
