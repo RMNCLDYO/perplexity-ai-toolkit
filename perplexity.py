@@ -4,15 +4,17 @@ class Chat:
     def __init__(self):
         self.client = None
 
-    def run(self, api_key=None, model="sonar-medium-chat", prompt=None, system_prompt=None, stream=None, max_tokens=None, temperature=None, top_p=None, top_k=None, presence_penalty=None, frequency_penalty=None):
+    def run(self, api_key=None, model=None, prompt=None, system_prompt=None, stream=None, max_tokens=None, temperature=None, top_p=None, top_k=None, presence_penalty=None, frequency_penalty=None):
         
         self.client = Client(api_key=api_key)
-        self.model = model if model else self.client.config.get('chat_model')
+        self.model = model if model else self.client.config.get('base_chat_model')
 
         conversation_history = []
 
         if system_prompt:
             conversation_history.append({"role": "system", "content": system_prompt})
+
+        print("Type 'exit' or 'quit' at any time to end the conversation.\n")
 
         print("Assistant: Hello! How can I assist you today?")
         while True:
@@ -33,7 +35,7 @@ class Chat:
             conversation_history.append({"role": "user", "content": user_input})
 
             payload = {
-                "model": model,
+                "model": self.model,
                 "messages": conversation_history,
                 "system_prompt": system_prompt,
                 "stream": stream,
@@ -63,10 +65,14 @@ class Search:
     def __init__(self):
         self.client = None
 
-    def run(self, api_key=None, model="sonar-medium-online", query=None, system_prompt=None, stream=None, max_tokens=None, temperature=None, top_p=None, top_k=None, presence_penalty=None, frequency_penalty=None):
+    def run(self, api_key=None, model=None, query=None, system_prompt=None, stream=None, max_tokens=None, temperature=None, top_p=None, top_k=None, presence_penalty=None, frequency_penalty=None):
         
         self.client = Client(api_key=api_key)
-        self.model = model if model else self.client.config.get('search_model')
+        self.model = model if model else self.client.config.get('base_search_model')
+
+        if "online" not in self.model:
+            print("Error: { Invalid model type }. Please use a search model instead of a chat model.")
+            exit(1)
 
         if not query:
             print("Error: { Invalid input detected }. Please enter a valid search query.")
@@ -81,7 +87,7 @@ class Search:
             message = [{"role": "user", "content": query}]
         
         payload = {
-            "model": model,
+            "model": self.model,
             "messages": message,
             "system_prompt": system_prompt,
             "stream": stream,
@@ -104,3 +110,5 @@ class Search:
             response = self.client.post(endpoint, data)
             assistant_response = response
             print(f"Assistant: {assistant_response}")
+
+        print("\nThank you for using the Perplexity AI toolkit. Have a great day!")
