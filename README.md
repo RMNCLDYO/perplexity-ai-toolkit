@@ -152,11 +152,11 @@ Search().run(query="What is today's date?")
 | Enable chat mode                         | `-c`,  `--chat`              | --chat                                              | *See mode usage above*                            |
 | Enable online search mode                | `-s`,  `--search`            | --search                                            | *See mode usage above*                            |
 | Online search query                      | `-q`,  `--query`             | --query "What is today's date?"                     | query="What is today's date?"                     |
-| User prompt                              | `-p`,  `--prompt`            | --prompt "How are you doing today my ai friend?"    | prompt="How are you doing today my ai friend?"    |
+| User prompt                              | `-p`,  `--prompt`            | --prompt "How many stars are there in our galaxy?"  | prompt="How many stars are there in our galaxy?"  |
 | API key for authentication               | `-a`,  `--api_key`           | --api_key your_api_key                              | api_key="your_api_key"                            |
 | Model name                               | `-m`,  `--model`             | --model "sonar-medium-chat"                         | model="sonar-medium-online"                       |
 | Enable streaming mode                    | `-st`, `--stream`            | --stream                                            | stream=True                                       |
-| System prompt (instructions)             | `-sp`, `--system_prompt`     | --system_prompt "You are an advanced ai assistant"  | system_prompt="You are an advanced ai assistant"  |
+| System prompt (instructions)             | `-sp`, `--system_prompt`     | --system_prompt "Be precise and concise."           | system_prompt="Be precise and concise."           |
 | Maximum tokens to generate               | `-mt`, `--max_tokens`        | --max_tokens 100                                    | max_tokens=100                                    |
 | Sampling temperature                     | `-tm`, `--temperature`       | --temperature 0.7                                   | temperature=0.7                                   |
 | Nucleus sampling threshold               | `-tp`, `--top_p`             | --top_p 0.9                                         | top_p=0.9                                         |
@@ -185,9 +185,12 @@ Where possible, Perplexity tries to match the Hugging Face implementation.
 
 | **Model**                 | **Max Tokens** |
 |---------------------------|----------------|
+| `llama-3-8b-instruct`     | 8192           |
+| `llama-3-70b-instruct`    | 8192           |
 | `codellama-70b-instruct`  | 16384          |
 | `mistral-7b-instruct` [1] | 16384          |
 | `mixtral-8x7b-instruct`   | 16384          |
+| `mixtral-8x22b-instruct`  | 16384          |
 
 > [1] This model refers to the v0.2 release of `mistral-7b-instruct`.
 
