@@ -24,8 +24,8 @@ def load_config(api_key=None):
     
     return {
         'api_key': api_key,
-        'chat_model': os.getenv('PERPLEXITY_DEFAULT_CHAT_MODEL', 'sonar-medium-chat'),
-        'search_model': os.getenv('PERPLEXITY_DEFAULT_SEARCH_MODEL', 'sonar-medium-online'),
+        'base_chat_model': os.getenv('PERPLEXITY_BASE_CHAT_MODEL', 'sonar-medium-chat'),
+        'base_search_model': os.getenv('PERPLEXITY_BASE_SEARCH_MODEL', 'sonar-medium-online'),
         'base_url': os.getenv('PERPLEXITY_BASE_URL', 'https://api.perplexity.ai'),
         'timeout': int(os.getenv('PERPLEXITY_TIMEOUT', 20)),
     }
