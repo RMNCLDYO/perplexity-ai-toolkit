@@ -4,6 +4,21 @@ All notable changes to the project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] - 2024-04-22
+
+### Added
+- Added support for `llama-3`
+- Added syntax for exiting/quitting the program to the beginning of the conversation in `perplexity.py`
+- Added goodbye syntax to the end of the search request in `perplexity.py`
+
+### Changed
+- Changed variable names in `config.py`
+- Set default models to models from config or env in `perplexity.py`
+- Updated syntax in `cli.py`
+
+### Removed
+- Removed unused timeout in `client.py`
+
 ## [1.2.0] - 2024-03-23
 
 ### Added
