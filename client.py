@@ -6,7 +6,7 @@ from loading import Loading
 print("------------------------------------------------------------------\n")
 print("                      Perplexity AI Toolkit                       \n")     
 print("               API Wrapper & Command-line Interface               \n")   
-print("                       [v1.2.0] by @rmncldyo                      \n")  
+print("                       [v1.2.1] by @rmncldyo                      \n")  
 print("------------------------------------------------------------------\n")
 
 class Client:
@@ -14,7 +14,6 @@ class Client:
         self.config = load_config(api_key=api_key)
         self.api_key = api_key if api_key else self.config.get('api_key')
         self.base_url = self.config.get('base_url')
-        self.timeout = self.config.get('timeout')
         self.headers = {
             "authorization": f"Bearer {self.api_key}",
             "accept": "application/json",
