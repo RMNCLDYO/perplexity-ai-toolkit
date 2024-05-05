@@ -4,6 +4,18 @@ All notable changes to the project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.2] - 2024-05-05
+
+### Added
+- Added support for `llama-3-sonar-small-32k-chat`, `llama-3-sonar-large-32k-chat`, `llama-3-sonar-small-32k-online` and `llama-3-sonar-large-32k-online`.
+
+### Changed
+- Updated default base models in `config.py` to use `llama-3-sonar-large-32k-chat` for chat functionalities and `llama-3-sonar-large-32k-online` for search functionalities.
+  
+### Removed
+- Removed references to older models such as `sonar-small-chat`, `sonar-medium-chat`, `sonar-small-online` and `sonar-medium-online` in the code and documentation to streamline the use of newer `llama-3-sonar` models.
+- Removed references to `codellama-70b-instruct`, `mistral-7b-instruct` and `mixtral-8x22b-instruct`, as Perplexity Labs no loger supports the models.
+
 ## [1.2.1] - 2024-04-22
 
 ### Added
