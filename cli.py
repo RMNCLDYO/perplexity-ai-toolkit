@@ -10,7 +10,7 @@ def main():
     ------------------------------------------------------------------
                           Perplexity AI Toolkit                                 
                    API Wrapper & Command-line Interface               
-                          [v1.2.1] by @rmncldyo                      
+                          [v1.2.2] by @rmncldyo                      
     ------------------------------------------------------------------
 
     Perplexity AI toolit is an API wrapper and command-line interface for the suite of large-language models offered by Perplexity Labs.
@@ -22,7 +22,7 @@ def main():
     | -p,  --prompt            | User prompt                              | --prompt "How many stars are there in our galaxy?"                            |
     | -q,  --query             | Online search query                      | --query "What is today's date?"                                               |
     | -a,  --api_key           | API key for authentication               | --api_key "api_key_goes_here"                                                 |
-    | -m,  --model             | Model name                               | --model "model_name_goes_here"                                                |
+    | -m,  --model             | Model name                               | --model "llama-3-sonar-large-32k-chat"                                        |
     | -sp, --system_prompt     | System prompt (instructions)             | --system_prompt "Be precise and concise."                                     |
     | -st, --stream            | Enable streaming mode                    | --stream                                                                      |
     | -mt, --max_tokens        | Maximum tokens to generate               | --max_tokens 1024                                                             |
