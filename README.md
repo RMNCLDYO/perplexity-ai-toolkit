@@ -26,7 +26,7 @@
 </p>
 
 ## Overview
-The Perplexity AI Toolkit makes it easy to use Perplexity Labs' `Sonar` language models and a suit of open-source models like `LLama-3`, `Mistral`, `Mixtral`, and `CodeLlama` for creating chatbots, generating text, and searching the web (in real-time). It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
+The Perplexity AI Toolkit makes it easy to use Perplexity Labs' `Sonar` language models (built on top of LLama-3), `LLama-3` and `Mixtral`, for creating chatbots, generating text, and searching the web (in real-time). It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
 
 ## Key Features
 - **Search Functionality**: Search online (in real-time) with the help of AI.
@@ -154,7 +154,7 @@ Search().run(query="What is today's date?")
 | Online search query                      | `-q`,  `--query`             | --query "What is today's date?"                     | query="What is today's date?"                     |
 | User prompt                              | `-p`,  `--prompt`            | --prompt "How many stars are there in our galaxy?"  | prompt="How many stars are there in our galaxy?"  |
 | API key for authentication               | `-a`,  `--api_key`           | --api_key your_api_key                              | api_key="your_api_key"                            |
-| Model name                               | `-m`,  `--model`             | --model "sonar-medium-chat"                         | model="sonar-medium-online"                       |
+| Model name                               | `-m`,  `--model`             | --model "llama-3-sonar-large-32k-online"            | model="llama-3-sonar-large-32k-online"            |
 | Enable streaming mode                    | `-st`, `--stream`            | --stream                                            | stream=True                                       |
 | System prompt (instructions)             | `-sp`, `--system_prompt`     | --system_prompt "Be precise and concise."           | system_prompt="Be precise and concise."           |
 | Maximum tokens to generate               | `-mt`, `--max_tokens`        | --max_tokens 100                                    | max_tokens=100                                    |
@@ -172,12 +172,12 @@ Perplexity uniquely offers both native models and a selection of large, open-sou
 
 ### Perplexity Models
 
-| **Model**             | **Max Tokens** |
-|-----------------------|----------------|
-| `sonar-small-chat`    | 16384          |
-| `sonar-small-online`  | 12000          |
-| `sonar-medium-chat`   | 16384          |
-| `sonar-medium-online` | 12000          |
+| **Model**                        | **Max Tokens** |
+|----------------------------------|----------------|
+| `llama-3-sonar-small-32k-chat`   | 32768          |
+| `llama-3-sonar-small-32k-online` | 28000          |
+| `llama-3-sonar-large-32k-chat`   | 32768          |
+| `llama-3-sonar-large-32k-online` | 28000          |
 
 ### Open-Source Models
 
@@ -187,12 +187,7 @@ Where possible, Perplexity tries to match the Hugging Face implementation.
 |---------------------------|----------------|
 | `llama-3-8b-instruct`     | 8192           |
 | `llama-3-70b-instruct`    | 8192           |
-| `codellama-70b-instruct`  | 16384          |
-| `mistral-7b-instruct` [1] | 16384          |
 | `mixtral-8x7b-instruct`   | 16384          |
-| `mixtral-8x22b-instruct`  | 16384          |
-
-> [1] This model refers to the v0.2 release of `mistral-7b-instruct`.
 
 ### Online LLMs
 Search mode is limited to 'online' models, such as `sonar-small-online` and `sonar-medium-online`. For these online LLMs, Perplexity recommends refraining from using system prompts.
