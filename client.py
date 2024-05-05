@@ -6,7 +6,7 @@ from loading import Loading
 print("------------------------------------------------------------------\n")
 print("                      Perplexity AI Toolkit                       \n")     
 print("               API Wrapper & Command-line Interface               \n")   
-print("                       [v1.2.1] by @rmncldyo                      \n")  
+print("                       [v1.2.2] by @rmncldyo                      \n")  
 print("------------------------------------------------------------------\n")
 
 class Client:
