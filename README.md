@@ -29,13 +29,10 @@
 The Perplexity AI Toolkit makes it easy to use Perplexity Labs' `Sonar` language models (built on top of LLama-3), `LLama-3` and `Mixtral`, for creating chatbots, generating text, and searching the web (in real-time). It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
 
 ## Key Features
-- **Search Functionality**: Search online (in real-time) with the help of AI.
-- **Chat Functionality**: Engage in interactive conversations with Perplexity's advanced conversational models.
-- **Command-Line Interface (CLI)**: Access the full suite of functionalities directly from the command line.
-- **Python Wrapper**: Simplify interaction with a variety of models in only 2 lines of code.
-- **Streamed Responses**: Receive responses as they are generated for real-time interaction.
-- **Flexible Configuration**: Customize the token limits, system prompt, temperature, frequency penalty, and more.
-- **Minimal Dependencies**: Built to be efficient and lightweight, requiring only the `requests` package for operation.
+- **Conversational AI**: Create interactive, real-time chat experiences (chatbots) or AI assistants.
+- **Real-Time Web Search**: Conduct online searches in real-time with precise query responses.
+- **Highly Customizable**: Tailor settings like streaming output, system prompts, sampling temperature and more to suit your specific requirements.
+- **Lightweight Integration**: Efficiently designed with minimal dependencies, requiring only the `requests` package for core functionality.
 
 ## Prerequisites
 - `Python 3.x`
