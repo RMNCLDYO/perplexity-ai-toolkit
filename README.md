@@ -169,25 +169,38 @@ Perplexity uniquely offers both native models and a selection of large, open-sou
 
 ### Perplexity Models
 
-| **Model**                        | **Max Tokens** |
-|----------------------------------|----------------|
-| `llama-3-sonar-small-32k-chat`   | 32768          |
-| `llama-3-sonar-small-32k-online` | 28000          |
-| `llama-3-sonar-large-32k-chat`   | 32768          |
-| `llama-3-sonar-large-32k-online` | 28000          |
+| **Model**                           | **Max Tokens** |
+|-------------------------------------|----------------|
+| `llama-3-sonar-small-32k-online` *  | 28,000         |
+| `llama-3-sonar-small-32k-chat` *    | 32,768         |
+| `llama-3-sonar-large-32k-online` *  | 28,000         |
+| `llama-3-sonar-large-32k-chat` *    | 32,768         |
+| `llama-3.1-sonar-small-128k-online` | 127,072        |
+| `llama-3.1-sonar-small-128k-chat`   | 131,072        |
+| `llama-3.1-sonar-large-128k-online` | 127,072        |
+| `llama-3.1-sonar-large-128k-chat`   | 131,072        |
 
 ### Open-Source Models
 
 Where possible, Perplexity tries to match the Hugging Face implementation.
 
-| **Model**                 | **Max Tokens** |
-|---------------------------|----------------|
-| `llama-3-8b-instruct`     | 8192           |
-| `llama-3-70b-instruct`    | 8192           |
-| `mixtral-8x7b-instruct`   | 16384          |
+| **Model**                           | **Max Tokens** |
+|-------------------------------------|----------------|
+| `llama-3-sonar-small-32k-online` *  | 28,000         |
+| `llama-3-sonar-small-32k-chat` *    | 32,768         |
+| `llama-3-sonar-large-32k-online` *  | 28,000         |
+| `llama-3-sonar-large-32k-chat` *    | 32,768         |
+| `llama-3.1-sonar-small-128k-online` | 127,072        |
+| `llama-3.1-sonar-small-128k-chat`   | 131,072        |
+| `llama-3.1-sonar-large-128k-online` | 127,072        |
+| `llama-3.1-sonar-large-128k-chat`   | 131,072        |
+
+*All models with an asterisk ( * ) [llama-3] will be deprecated on August 12 2024.*
 
 ### Online LLMs
-Search mode is limited to 'online' models, such as `sonar-small-online` and `sonar-medium-online`. For these online LLMs, Perplexity recommends refraining from using system prompts.
+Search mode is limited to 'online' models, such as `llama-3.1-sonar-small-128k-online` and `llama-3.1-sonar-large-128k-online`. 
+
+- *Perplexity makes note that the search subsystem of the Online LLMs do not attend to the system prompt. You can only use the system prompt to provide instructions related to style, tone, and language of the response.*
 
 ## Contributing
 Contributions are welcome!
