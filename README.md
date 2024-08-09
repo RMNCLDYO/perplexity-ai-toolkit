@@ -26,7 +26,7 @@
 </p>
 
 ## Overview
-The Perplexity AI Toolkit makes it easy to use Perplexity Labs' `Sonar` language models (built on top of LLama-3), `LLama-3` and `Mixtral`, for creating chatbots, generating text, and searching the web (in real-time). It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
+The Perplexity AI Toolkit makes it easy to use Perplexity Labs' `Sonar` language models (built on top of Meta's latest and most advanced model `LLama-3.1`) for creating chatbots, generating text, and searching the web (***in real-time***). It's designed for everyone, from beginners to experienced developers, allowing quick addition of AI features to projects with simple commands. While it offers simplicity and lightweight integration, it doesn't compromise on power; experienced developers can access the full suite of advanced options available via the API, ensuring robust customization and control. This toolkit is perfect for those looking to efficiently tap into advanced AI without getting bogged down in technical details, yet it still provides the depth needed for complex project requirements.
 
 ## Key Features
 - **Conversational AI**: Create interactive, real-time chat experiences (chatbots) or AI assistants.
@@ -151,7 +151,7 @@ Search().run(query="What is today's date?")
 | Online search query                      | `-q`,  `--query`             | --query "What is today's date?"                     | query="What is today's date?"                     |
 | User prompt                              | `-p`,  `--prompt`            | --prompt "How many stars are there in our galaxy?"  | prompt="How many stars are there in our galaxy?"  |
 | API key for authentication               | `-a`,  `--api_key`           | --api_key your_api_key                              | api_key="your_api_key"                            |
-| Model name                               | `-m`,  `--model`             | --model "llama-3-sonar-large-32k-chat"              | model="llama-3-sonar-large-32k-chat"              |
+| Model name                               | `-m`,  `--model`             | --model "llama-3.1-sonar-small-128k-chat"           | model="llama-3.1-sonar-small-128k-chat"           |
 | Enable streaming mode                    | `-st`, `--stream`            | --stream                                            | stream=True                                       |
 | System prompt (instructions)             | `-sp`, `--system_prompt`     | --system_prompt "Be precise and concise."           | system_prompt="Be precise and concise."           |
 | Maximum tokens to generate               | `-mt`, `--max_tokens`        | --max_tokens 100                                    | max_tokens=100                                    |
