@@ -171,10 +171,6 @@ Perplexity uniquely offers both native models and a selection of large, open-sou
 
 | **Model**                           | **Max Tokens** |
 |-------------------------------------|----------------|
-| `llama-3-sonar-small-32k-online` *  | 28,000         |
-| `llama-3-sonar-small-32k-chat` *    | 32,768         |
-| `llama-3-sonar-large-32k-online` *  | 28,000         |
-| `llama-3-sonar-large-32k-chat` *    | 32,768         |
 | `llama-3.1-sonar-small-128k-online` | 127,072        |
 | `llama-3.1-sonar-small-128k-chat`   | 131,072        |
 | `llama-3.1-sonar-large-128k-online` | 127,072        |
@@ -186,16 +182,10 @@ Where possible, Perplexity tries to match the Hugging Face implementation.
 
 | **Model**                           | **Max Tokens** |
 |-------------------------------------|----------------|
-| `llama-3-sonar-small-32k-online` *  | 28,000         |
-| `llama-3-sonar-small-32k-chat` *    | 32,768         |
-| `llama-3-sonar-large-32k-online` *  | 28,000         |
-| `llama-3-sonar-large-32k-chat` *    | 32,768         |
 | `llama-3.1-sonar-small-128k-online` | 127,072        |
 | `llama-3.1-sonar-small-128k-chat`   | 131,072        |
 | `llama-3.1-sonar-large-128k-online` | 127,072        |
 | `llama-3.1-sonar-large-128k-chat`   | 131,072        |
-
-*All models with an asterisk ( * ) [llama-3] will be deprecated on August 12 2024.*
 
 ### Online LLMs
 Search mode is limited to 'online' models, such as `llama-3.1-sonar-small-128k-online` and `llama-3.1-sonar-large-128k-online`. 
