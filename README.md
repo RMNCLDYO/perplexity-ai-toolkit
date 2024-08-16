@@ -141,6 +141,8 @@ Search().run(query="What is today's date?")
 
 > An executable version of this example can be found [here](./examples/example_search.py). (*You must move this file to the root folder before running the program.*)
 
+*Search mode is limited to 'online' models, such as `llama-3.1-sonar-small-128k-online`, `llama-3.1-sonar-large-128k-online` and `llama-3.1-sonar-huge-128k-online`.*
+
 ## Advanced Configuration
 
 ### CLI and Wrapper Options
@@ -165,32 +167,33 @@ Search().run(query="What is today's date?")
 
 ## Available Models
 
-Perplexity uniquely offers both native models and a selection of large, open-source models, providing a versatile and efficient way to leverage their API for a wide range of applications with both in-house and extensive community-developed models.
+Perplexity offers both native models and a selection of large, open-source instruct models.
 
-### Perplexity Models
+### Online Models
 
-| **Model**                           | **Max Tokens** |
-|-------------------------------------|----------------|
-| `llama-3.1-sonar-small-128k-online` | 127,072        |
-| `llama-3.1-sonar-small-128k-chat`   | 131,072        |
-| `llama-3.1-sonar-large-128k-online` | 127,072        |
-| `llama-3.1-sonar-large-128k-chat`   | 131,072        |
+| **Model**                           | **Parameter Count** | **Context Length** |
+|-------------------------------------|---------------------|--------------------|
+| `llama-3.1-sonar-small-128k-online` | 8B                  | 127,072            |
+| `llama-3.1-sonar-large-128k-online` | 70B                 | 127,072            |
+| `llama-3.1-sonar-huge-128k-online`  | 405B                | 127,072            |
+
+- *Perplexity makes note that the search subsystem of the Online LLMs do not attend to the system prompt. You can only use the system prompt to provide instructions related to style, tone, and language of the response.*
+
+### Chat Models
+
+| **Model**                         | **Parameter Count** | **Context Length** |
+|-----------------------------------|---------------------|--------------------|
+| `llama-3.1-sonar-small-128k-chat` | 8B                  | 131,072            |
+| `llama-3.1-sonar-large-128k-chat` | 70B                 | 131,072            |
 
 ### Open-Source Models
 
-Where possible, Perplexity tries to match the Hugging Face implementation.
+| **Model**                | **Parameter Count** | **Context Length** |
+|--------------------------|---------------------|--------------------|
+| `llama-3.1-8b-instruct`  | 8B                  | 131,072            |
+| `llama-3.1-70b-instruct` | 70B                 | 131,072            |
 
-| **Model**                           | **Max Tokens** |
-|-------------------------------------|----------------|
-| `llama-3.1-sonar-small-128k-online` | 127,072        |
-| `llama-3.1-sonar-small-128k-chat`   | 131,072        |
-| `llama-3.1-sonar-large-128k-online` | 127,072        |
-| `llama-3.1-sonar-large-128k-chat`   | 131,072        |
-
-### Online LLMs
-Search mode is limited to 'online' models, such as `llama-3.1-sonar-small-128k-online` and `llama-3.1-sonar-large-128k-online`. 
-
-- *Perplexity makes note that the search subsystem of the Online LLMs do not attend to the system prompt. You can only use the system prompt to provide instructions related to style, tone, and language of the response.*
+- *Where possible, Perplexity tries to match the Hugging Face implementation.*
 
 ## Contributing
 Contributions are welcome!
